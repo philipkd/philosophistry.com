@@ -1,0 +1,2 @@
+RewriteEngine on
+RewriteRule printable.php index.php?hide=1

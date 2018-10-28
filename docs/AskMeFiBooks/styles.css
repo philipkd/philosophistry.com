@@ -1,0 +1,33 @@
+
+table {
+	border-width: 1px;
+	border-spacing: 0px;
+	border-style: solid solid solid solid;
+	border-color: #DDD;
+	border-collapse: separate;
+	background-color: white;
+}
+table td {
+	border-width: 1px 1px 1px 1px;
+	padding: 3px;
+	border-style: solid solid solid solid;
+	border-color: #DDD;
+	background-color: white;
+	-moz-border-radius: 0px 0px 0px 0px;
+}
+
+body {
+	font-family: Arial;
+	line-height: 150%;
+}
+
+p {
+	width: 600px;
+}
+
+h1 {
+	font-size: 1.5em;
+}
+img {
+	border: 0px;
+}

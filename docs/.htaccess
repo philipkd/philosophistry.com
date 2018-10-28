@@ -1,0 +1,22 @@
+Options All +Includes +MultiViews
+AddHandler server-parsed html rdf xml
+AddHandler cgi-script .pl
+
+ErrorDocument 404 /404.html
+
+RewriteEngine on
+
+RewriteRule ^notes/(.*) /index.php?route=$1 [L]
+
+# RewriteCond "%{HTTP_HOST}" "^www.philosophistry.com$" [OR]
+# RewriteCond "%{HTTP_HOST}" "^local.philosophistry.com$" [OR]
+# RewriteCond "%{HTTP_HOST}" "^philosophistry.com$"
+# RewriteRule ^$ https://medium.com/philosophistry [L]
+
+# Dear Hannah
+
+Redirect 301 /archives/2011/02/benefits-of-meditation.html https://medium.com/@philipkd/8-changes-to-my-life-after-just-4-weeks-of-meditation-535bbab183d5
+
+Redirect 301 /archives/2012/02/how-i-kept-up-with-meditation-for-an-entire-year.html	https://medium.com/@philipkd/how-i-kept-up-with-meditation-for-an-entire-year-680ecf2334e2
+
+RedirectMatch 301 /AskMeFiBooks* http://philipkd.com/books-on-metafilter

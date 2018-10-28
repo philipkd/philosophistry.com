@@ -1,0 +1,10 @@
+User-agent: *
+Disallow: /archives/scans/*
+Disallow: /scans/*
+Disallow: /specials/syriana/SyrianaWeb.jpg
+Disallow: /archives/2003/08/000688.html
+Disallow: /archives/2003/08/000676.html
+Disallow: /designs/
+Disallow: /*.gif$
+Disallow: /*.jpg$
+Disallow: /*.png$

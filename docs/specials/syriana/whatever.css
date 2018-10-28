@@ -1,0 +1,39 @@
+/* css Zen Garden submission 195 - 'Dazzling Beauty', by Deny Sri Supriyono, http://deepblue.indika.net.id/ */
+/* css released under Creative Commons License - http://creativecommons.org/licenses/by-nc-sa/1.0/  */
+/* All associated graphics copyright 2006, Deny Sri Supriyono */
+/* Added: February 15th, 2006 */
+
+
+/* IMPORTANT */
+/* This design is not a template. You may not reproduce it elsewhere without the 
+   designer's written permission. However, feel free to study the CSS and use 
+   techniques you learn from it elsewhere. */
+
+
+body {
+	font: normal 1em/1.4em Tahoma, Verdana, Arial, Georgia, sans-serif; 
+	color: #555555;
+
+}
+
+
+a, a:visited {
+	text-decoration: none;
+	color: #D7661C;
+	border-bottom: 1px dotted #ccc;
+}
+
+a:hover {
+	text-decoration: none;
+	color: #94AB36;
+	border-bottom: 1px solid #ccc;
+}
+
+
+p {
+	margin-bottom: 10px;
+}
+
+li {
+ 	margin-top: .3em;
+}
