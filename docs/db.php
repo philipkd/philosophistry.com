@@ -15,8 +15,8 @@
     if ($argv[1])
     	$GLOBALS['tag_route'] = $argv[1];
 
-	$GLOBALS['files_dir'] = dirname(__FILE__) . "/content/Files";
-	$GLOBALS['logs_dir'] = dirname(__FILE__) . "/content/Logs";
+	$GLOBALS['files_dir'] = dirname(__FILE__) . "/../content/Files";
+	$GLOBALS['logs_dir'] = dirname(__FILE__) . "/../content/Logs";
 
 	$GLOBALS['essays'] = array();
 
