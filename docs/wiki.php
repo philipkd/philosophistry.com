@@ -63,3 +63,6 @@ if ($title == 'index')
 <div class="page-title"><?= $title ?></div>
 
 <?= MyMarkdown2($contents) ?>
+
+<br/>
+<a href="https://licensebuttons.net/l/by/4.0/"><img src="https://licensebuttons.net/l/by/4.0/80x15.png"></a>

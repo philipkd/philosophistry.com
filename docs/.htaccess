@@ -6,6 +6,8 @@ ErrorDocument 404 /404.html
 
 RewriteEngine on
 
+RewriteRule ^$ /index.php [L]
+
 RewriteRule ^db/([^.]*)$ /db.php?tag=$1 [L]
 
 RewriteRule ^wiki/([^.]*)$ /wiki.php?note=$1 [L]

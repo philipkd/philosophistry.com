@@ -399,8 +399,10 @@ EOT;
 
  		print_tag('_new');
 
- 		echo "<br/><br/><br/><br/>";
  	}
+
+ 	print '<p/>
+<a href="https://licensebuttons.net/l/by/4.0/"><img src="https://licensebuttons.net/l/by/4.0/80x15.png"></a><br/><br/>';
 
  	print "</div>";
 
