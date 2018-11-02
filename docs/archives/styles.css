@@ -1,0 +1,54 @@
+.content {
+	padding: 20px;
+	background-color: white;
+	text-align: left;
+}
+
+.content_container {
+	width: 760px;
+	margin: 0px auto;
+	padding: 0;
+}
+
+.content_container_container {
+	text-align: center;
+	padding: 0;
+	margin: 0 0 40px;
+}
+
+h2 {
+	font-size: 16px;
+}
+
+h1 {
+	font-size: 22px;
+}
+
+body {
+	background-color: #E6E6E6;
+	font-family: Arial;
+	line-height: 130%;
+	margin-top: 0;
+}
+
+.banner_container {
+	width: 760px;
+	background-color: #CCC;
+	margin: 0;
+	padding: 0px;
+}
+
+.banner {
+	font-style:italic;
+	padding: 10px;
+
+}
+
+img {
+	border: 0;
+}
+
+a:link { color: cornflowerblue; font-weight: bold; text-decoration : none; }
+a:visited { color: #7777AA; font-weight: bold; text-decoration: none; }
+a:active { color: #0033cc; font-weight: bold; text-decoration: none; }
+a:hover { color: dodgerblue; font-weight: bold; text-decoration: underline; }

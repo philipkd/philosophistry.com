@@ -1,0 +1,97 @@
+<title>Some thoughts on Web 2.0 principles and Google search results (Philosophistry)</title>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+
+<link rel="stylesheet" href="/archives/styles.css" type="text/css" />
+
+
+<center>
+
+<div class="logo"><a href="/archives/"><img src="/archives/title.jpg"></a></div>
+<div class="banner_container">
+<div class="banner">This is <a href="/archives/">Philosophistry: The Blog</a>. There are other <a href="/">Philosophistry publications</a>.
+</div>
+</div>
+
+</center>
+
+<div class="content_container_container">
+<div class="content_container">
+<div class="content">
+
+<script type="text/javascript"><!--
+google_ad_client = "ca-pub-2773853926535023";
+/* philosophistry rectangle */
+google_ad_slot = "2022967402";
+google_ad_width = 336;
+google_ad_height = 280;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+
+<br/>
+
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-18069474-2']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+<br/>
+
+<h1>Some thoughts on Web 2.0 principles and Google search results</h1>
+<h2>by <a href="mailto:philblog@dhingra.org">phil</a> on Tuesday Jan 13, 2009  1:10 PM 
+<br><a href="/archives/dlog.html">dlog</a>, <a href="/archives/mainfeed.html">mainfeed</a>, <a href="/archives/thinking_about_design.html">thinking about design</a></h2>
+
+<p>Part of the allure of <a href="http://en.wikipedia.org/wiki/Web_2.0">Web 2.0</a> principles is that they suggest counter-intuitive responses to business decisions. One of the 2.0 principles is about enabling shareability, even at a cost. YouTube, for example, made a move that was bold at the time. What YouTube did was let anybody embed their videos anywhere. And YouTube went further than simply permitting this. They encouraged it! They provided the HTML code to embed videos on every YouTube page. At the time, this idea would have been a tough sell. The argument is that you don't want users leeching your service without giving anything back. But by doing this, though, YouTube became the primary way that MySpace kiddies started sharing videos with each other. And through the power of viral marketing, YouTube's traffic exploded.</p>
+
+<p>The way I perceive products, I always look for clues into the mindset of the creators. Part of the enjoyment from using Apple's products is imagining how hard-of-a-sell some of their unique features would be anywhere else. For example, if you were an idealistic product manager at almost any other software company, and you wanted to really perfect the user experience, you'd have a mutiny among your developers and the producers would be breathing down your neck.</p>
+
+<p>Likewise, Google is a fascinating company to watch. You can see so many places where every other company would have bowed to compromise or inappropriate pressure from the wrong departments. When I was working at Google, for example, I overheard that one person has the role of defending the simplicity of the home page. Her job is to resist pressure to turn Google into a Yahoo!-style portal. I'm sure that every day, someone begs her, "come on, this will get us more exposure for our products & services, which means more money, which means you'll get a raise!" And she just has to say, a thousand times a year, "No."</p>
+
+<p>There's a technical feature about Google's search results that is an imperfect application of 2.0 principles. There are three methods to providing links in search results:</p>
+
+<p><b>Just share the link</b></p>
+
+<p>In this case, you provide search results as follows:<blockquote class="huff">&lt;a href="http://www.searchresult.com/">search result&lt;/a></blockquote>This is probably how you would first make a search engine. This is nice for users, because if instead of visiting the link, they want to share the link, they can just right-click on the it, choose "Copy Link Location," and then paste it in an e-mail or an instant message. This is what Google does if you're <i>not</i> signed in. This, to me, would be the most pure application of Web 2.0 principles.</p>
+
+<p><br />
+<b>Wrap the link with tracking URLs</b></p>
+
+<p>In this method, you embed the actual link into a link to an intermediary service that tracks what users are clicking on. So for example, this is what Google links to if you're signed in:<blockquote class="huff">http://www.google.com/url?sa=t&source=web&ct=res&cd=1&url=http%3A%2F%2Fwww.google.com%2Freader&ei=s-dsScLBB4is8gTNtZCkDA&usg=AFQjCNHkwXX7q8y0uRXShFxrBJdJ5oJt3Q&sig2=5KBTga4hto8b4cZyfvuJhw</blockquote><br />
+By tracking what people click, you can improve search results. Oddly enough, this isn't exactly what Google does, because they want to keep their search results untainted by fake clicks. The putative reasoning, I've heard, is that if you're signed in, Google will customize search results for you. But I've never noticed or heard of this actually happening. Which makes me wonder if Google simply tracks this data because they <i>might</i> want to do something with it. Which also, then, suggests a meeting at Google where someone simply pushed hard, "this information is so valuable to us, blah blah, we're using it for stealth project x, we can't get rid of the feature, people hardly complain about it."</p>
+
+<p>There are downsides, though. First of all, it discourages sharing the links because it word-wraps in an e-mail and takes up too much space in an instant message. It also just looks bad. Second, there may be invasion-of-privacy issues. And third, it does slow down visiting the site. It takes two hops, instead of one, to get to your destination. Google may argue that they have nearly 100% uptime, and that the forwarding service is nearly instant, but the experience is still imperfect.</p>
+
+<p>Those last two problems aren't necessarily related to accepted 2.0 principles, but they do violate the spirit of Web 2.0: err on the side of helping users out. It's a very "Don't be evil" approach.</p>
+
+<p><b>Wrap with a tracking URL, but fool the user</b></p>
+
+<p>This method, which Google doesn't use, makes users believe that the link they're clicking on goes directly to the next site. With JavaScript, shady search engines will make it appear, in your status bar, that you are getting a full URL:<blockquote class="huff">&lt;a onMouseOver="window.status='fakeURL'">realURL&lt;/a></blockquote></p>
+
+<p>This would violate the spirit of Web 2.0 by not being transparent enough.</p>
+
+<p>Now, when I initially wrote this article, I didn't survey any other search engines. I honestly expected that going to <a href="http://www.live.com/">live.com</a>, Microsoft's search engine, would show them tricking users. But even if you're signed in, Microsoft will use the first method. Which sort of makes sense, since I heard that the live.com group is supposed to be one of Microsoft's A-teams.</p>
+
+<p><i>(Cross-posted on <a href="http://www.hardtoremember.org/dlog/?file=m7gyx">Drunk Log</a>, which plays back the keystrokes that wrote this article)</i><br />
+
+
+<br/> 
+<a rel="license" href="http://creativecommons.org/licenses/by/2.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by/2.0/80x15.png" /></a>
+
+
+</div> <!-- content -->
+
+
+</div> <!-- content_container -->
+</div> <!-- content_container_container -->

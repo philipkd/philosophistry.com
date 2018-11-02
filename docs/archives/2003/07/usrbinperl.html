@@ -1,0 +1,268 @@
+<title>#!/usr/bin/perl ########################################## # # (Philosophistry)</title>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+
+<link rel="stylesheet" href="/archives/styles.css" type="text/css" />
+
+
+<center>
+
+<div class="logo"><a href="/archives/"><img src="/archives/title.jpg"></a></div>
+<div class="banner_container">
+<div class="banner">This is <a href="/archives/">Philosophistry: The Blog</a>. There are other <a href="/">Philosophistry publications</a>.
+</div>
+</div>
+
+</center>
+
+<div class="content_container_container">
+<div class="content_container">
+<div class="content">
+
+<script type="text/javascript"><!--
+google_ad_client = "ca-pub-2773853926535023";
+/* philosophistry rectangle */
+google_ad_slot = "2022967402";
+google_ad_width = 336;
+google_ad_height = 280;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+
+<br/>
+
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-18069474-2']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+<br/>
+
+<h1>#!/usr/bin/perl ########################################## # #</h1>
+<h2>by <a href="mailto:philblog@dhingra.org">phil</a> on Wednesday Jul 30, 2003 12:29 AM 
+</h2>
+
+<pre>
+#!/usr/bin/perl
+
+<p>##########################################<br />
+#<br />
+# Flash sometimes has problems communicating<br />
+# to traditional TCP/IP XML servers.  This is<br />
+# is because each packet that the Flash clients<br />
+# print to servers are ended by a "\0" while as<br />
+# server's traditionally recognize "\n" as the<br />
+# end.  Example, in Perl, if you go $line = <FILE><br />
+# $line will usually contain one line of the file<br />
+# where a line is whatever's delimited by \n's.<br />
+# Also, when reading data back, Flash only<br />
+# recognizes data if it's delimited by "\0"'s as<br />
+# well.  Lame, I know.<br />
+# <br />
+# This program relays communication back<br />
+# and forth between flash clients and standard<br />
+# servers.  There is an XML parsing issue that<br />
+# also has to be taken into account as each<br />
+# XML packet that comes from the server needs<br />
+# to be delimited with \0's.  I've attempted<br />
+# to take care of this as you'll see below..<br />
+# it hasn't been rigorously tested though<br />
+# so use at your own risk...<br />
+#<br />
+# I'm not the greatest programmer, and there<br />
+# may be blocking issues... so, please improve.<br />
+#<br />
+# I got most of this junk from Advanced Perl<br />
+# Programming by O'Reilly.<br />
+#<br />
+# - Philip Dhingra (philipd@stanford.edu)<br />
+#   http://www.philosophistry.com/<br />
+#<br />
+# Keywords: XMLSocket<br />
+###########################################</p>
+
+<p>use IO::Socket;<br />
+use IO::Select;</p>
+
+<p>$remote_rs = "\n";<br />
+$flash_rs = "\0";</p>
+
+<p># XML tags that I want to be sent to Flash<br />
+@root_headers = ('Q','O','M');</p>
+
+<p># $/ denotes the input record separator (default: '\n')<br />
+# $\ denotes the output record separater (default: null)<br />
+# Flash separates records with a \0<br />
+# Standard TCP/IP servers use the default, \n</p>
+
+<p>close STDOUT; # if you don't want to see what's going on</p>
+
+<p>$remote_host = 'whatever.com';<br />
+$remote_port = '6969';</p>
+
+<p>$local_port = '9696';</p>
+
+<p><br />
+$flash_sock = new IO::Socket::INET (Listen		=> SOMAXCONN,<br />
+									Proto		=> 'tcp',<br />
+									Reuse		=> 1,<br />
+									LocalPort	=> $local_port)<br />
+				or die ("**STATUS: Flash Listening Server could not start");<br />
+			<br />
+sub open_remote_sock {</p>
+
+<p>	return new IO::Socket::INET (Proto		=> 'tcp',<br />
+								 PeerAddr	=> $remote_host,<br />
+								 PeerPort	=> $remote_port)<br />
+			or die ("**STATUS: Cannot Connect to Remote Server (" . $remote_host . ":" . $remote_port);</p>
+
+<p>}</p>
+
+<p>print "**STATUS: Flash Listening Server started\n" if ($flash_sock);<br />
+				<br />
+$read_set = new IO::Select;<br />
+$read_set->add($flash_sock);</p>
+
+<p>while(1) {<br />
+	($new_readable) = IO::Select->select($read_set, undef, undef, undef);<br />
+	<br />
+	foreach $readable (@$new_readable) {<br />
+		if ($readable == $flash_sock) {<br />
+			$flash_client = $flash_sock->accept();</p>
+
+<p>			$read_set->add($flash_client);<br />
+			<br />
+			print "**STATUS: Flash connection from: " . $flash_client->peerhost . "\n";</p>
+
+<p>			$read_set->add($remote_sock = &open_remote_sock);<br />
+			print "**STATUS: Connected to Remote Server\n" if ($remote_sock);</p>
+
+<p>		} elsif ($readable == $remote_sock) {<br />
+			$/ = $remote_rs;<br />
+			$from_remote = <$remote_sock>;<br />
+			chomp $from_remote;</p>
+
+<p><br />
+			if ($from_remote eq '') {<br />
+				print "**STATUS: Remote Server connection lost**";<br />
+				$remote_sock->close;<br />
+				exit;				<br />
+			} else {<br />
+				print "(-): " . $from_remote . "\n";</p>
+
+<p>				# BEGIN XML parsing..</p>
+
+<p>				if ($waiting_for) {<br />
+					$queue .= $from_remote;<br />
+				} else {<br />
+					$queue = $from_remote;<br />
+				}</p>
+
+<p>				$waiting_for = hasRootHeaders($from_remote) unless ($waiting_for);</p>
+
+<p>				if ($waiting_for) {<br />
+					if ($queue =~ s/(<$waiting_for>.*?<\/$waiting_for>)//s) {</p>
+
+<p>						print $flash_client $1 . $flash_rs;<br />
+						$flash_client->flush();</p>
+
+<p>						$waiting_for = hasRootHeaders($queue);<br />
+					}<br />
+				}</p>
+
+<p>				# END XML parsing</p>
+
+<p>			}</p>
+
+<p>		# Flash client is trying to speak...<br />
+		} elsif ($readable == $flash_client) {<br />
+			$/ = $flash_rs;<br />
+			$from_flash = <$readable>;<br />
+			chomp($from_flash);<br />
+			<br />
+			if ($from_flash eq '') {<br />
+				print "**STATUS: Connection to Flash Client (" . $flash_client->peerhost . ") lost\n";<br />
+				$read_set->remove($readable);<br />
+				$readable->close;</p>
+
+<p>				# closing remote socket<br />
+				$read_set->remove($remote_sock);<br />
+				$remote_sock->close;<br />
+			} else {<br />
+			<br />
+				print "(+): " . $from_flash . "\n";<br />
+				print $remote_sock $from_flash . $remote_rs;<br />
+				$remote_sock->flush();</p>
+
+<p>			}</p>
+
+<p>		# Dead client is trying to speak<br />
+		} else {<br />
+			print "**STATUS: Connection to Flash Client (" . $readable->peerhost . ") lost\n";<br />
+			$read_set->remove($readable);<br />
+			$readable->close;<br />
+			<br />
+			# closing remote socket<br />
+			$read_set->remove($remote_sock);<br />
+			$remote_sock->close;<br />
+		}<br />
+	}<br />
+}</p>
+
+<p><br />
+sub hasRootHeaders {<br />
+	my $snippet = shift;<br />
+	my @matches;</p>
+
+<p>	foreach $key (@root_headers) {<br />
+		if ($snippet =~ m#</$key>#) {<br />
+			$tail_key = $key;<br />
+		}<br />
+	}<br />
+	<br />
+	foreach $key (@root_headers) {<br />
+		if ($snippet =~ m#<$key>#) {<br />
+			push @matches, $key;<br />
+		}<br />
+	}<br />
+	foreach $match (@matches) {<br />
+		return $match if ($match eq $tail_key);<br />
+	}</p>
+
+<p>	return pop(@matches) if (@matches);<br />
+	<br />
+	return '';<br />
+}</p>
+
+<p>sub drainReadBuffer {<br />
+	my $sock = shift;<br />
+	my $bytes_to_read = 1024;<br />
+	my $msg;</p>
+
+<p>	</p>
+
+<p>}</pre><br />
+Keywords: flash, record separator, null terminator, xmlsocket, xml server, relay</p>
+<h2>Comments</h2><p><a title="http://www.gchats.com" href="http://www.gchats.com" rel="nofollow">majid khossravi</a> said on February 22, 2004  6:49 AM: <p>how swf file within a html can communicate this server , i mean XMLSocket connection doesnt work if i wont execute perl file befor</p></p>
+
+
+<br/> 
+<a rel="license" href="http://creativecommons.org/licenses/by/2.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by/2.0/80x15.png" /></a>
+
+
+</div> <!-- content -->
+
+
+</div> <!-- content_container -->
+</div> <!-- content_container_container -->

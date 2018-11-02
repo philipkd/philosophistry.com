@@ -1,0 +1,83 @@
+<title>Some RAD (Rapid Application Development) Lessons (Philosophistry)</title>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+
+<link rel="stylesheet" href="/archives/styles.css" type="text/css" />
+
+
+<center>
+
+<div class="logo"><a href="/archives/"><img src="/archives/title.jpg"></a></div>
+<div class="banner_container">
+<div class="banner">This is <a href="/archives/">Philosophistry: The Blog</a>. There are other <a href="/">Philosophistry publications</a>.
+</div>
+</div>
+
+</center>
+
+<div class="content_container_container">
+<div class="content_container">
+<div class="content">
+
+<script type="text/javascript"><!--
+google_ad_client = "ca-pub-2773853926535023";
+/* philosophistry rectangle */
+google_ad_slot = "2022967402";
+google_ad_width = 336;
+google_ad_height = 280;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+
+<br/>
+
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-18069474-2']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+<br/>
+
+<h1>Some RAD (Rapid Application Development) Lessons</h1>
+<h2>by <a href="mailto:philblog@dhingra.org">phil</a> on Thursday Oct 13, 2005  1:33 AM 
+</h2>
+
+<p><i>working document</i></p>
+
+<p><b>pliancy</b> - Since you can't QA for every single case, and since you don't have the large user base yet to test for every case, make sure that every component is flexible and compatible in a multitude of situations.</p>
+
+<p><b>time2legacy</b> - When adding something to your codebase, ask yourself how long would it take for it to become legacy. You don't necessarily have to make everything scalable from the get go, but try not to make components that you think you might have to replace soon. The replacement process time increases by n^2 where n is the number of lines of code you have because the number of links and dependancies to that legacy piece increases exponentially.</p>
+
+<p><b>maintenence load</b> - How frequently will a piece of code have to change over time. And when changes occur, how much work is it for the developer?</p>
+
+<p><b>semantics</b> - The names of your functions and the logical organization of classes are so important in RAD. What I noticed is that in about two-three weeks I zoomed through the creation of a program. Then when I had to go back and make bug changes, I had to depend on function-naming cues to drill down to my code. Fortunately a good IDE like Visual Studio .NET makes it easy to jump from references to definitions. Usually if I see a bug in my program, I go to the UI designer then double-click on then control and then try to jump five hops to the part I need to edit. In other words, RAD happens so quickly that you'll leave a trail of code without any trail map. Hence the code should be intuitively easy to re-navigate. This is a given in any programming, but in RAD the need for semantic-clarity kind of jumped at me. I was looking at my own code as if a stranger had written it, and it's not that my memory is bad, it's that writing code and then getting acquainted with that code are processes that don't occur simultaneously. And the acquaintance part can even take longer. In other words, I feel I know more about my own code now, after having re-traversed over and over again through bug-checking, than I did when I first wrote it.</p>
+
+<p><i><b>rapid isolation</b> - ability to run isolate functions and run them without too many steps per iteration.</p>
+
+<p><b>change impact</b> - guaging the impact various changes to your code will have throughout the code. network thinking</p>
+
+<p><b>RAC and RAM</b> - There's rapid application creation. The speed cowboy-coder prototype builder. But RAM, Rapid Application Maintenence is important as well, and has its own separate methodology. It's so easy to make a demo, but then once the demo breaches the public, and new features are requested, and the product is evolving, how can you make that process really speedy.</p>
+
+<p></i></p>
+
+
+<br/> 
+<a rel="license" href="http://creativecommons.org/licenses/by/2.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by/2.0/80x15.png" /></a>
+
+
+</div> <!-- content -->
+
+
+</div> <!-- content_container -->
+</div> <!-- content_container_container -->

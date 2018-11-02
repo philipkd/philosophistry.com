@@ -7,7 +7,7 @@
 </head>
 
 <h1>Philosophistry: The Love of Rhetoric</h1>
-<a href="http://philipkd.com/">Philip Dhingra</a>’s musings on everything including futurism, evolution, psychology, philosophy, and self-improvement (<a href="https://medium.com/philosophistry/about-philosophistry-2eb831ee5ab2">est. 2003</a>). To see a preview of what I'm working on, visit <a href="wiki.php">the wiki</a>.
+<a href="http://philipkd.com/">Philip Dhingra</a>’s musings on everything including futurism, evolution, psychology, philosophy, and self-improvement (<a href="https://medium.com/philosophistry/about-philosophistry-2eb831ee5ab2">est. 2003</a>). To see a preview of what I'm working on, visit <a href="wiki.php">the wiki</a> or <a href="db.php">the db</a>.
 
 <style>
 body {

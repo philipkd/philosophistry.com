@@ -1,0 +1,113 @@
+<title>Perl Kung-Fu: How to Setup an IE-Inbox (Philosophistry)</title>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+
+<link rel="stylesheet" href="/archives/styles.css" type="text/css" />
+
+
+<center>
+
+<div class="logo"><a href="/archives/"><img src="/archives/title.jpg"></a></div>
+<div class="banner_container">
+<div class="banner">This is <a href="/archives/">Philosophistry: The Blog</a>. There are other <a href="/">Philosophistry publications</a>.
+</div>
+</div>
+
+</center>
+
+<div class="content_container_container">
+<div class="content_container">
+<div class="content">
+
+<script type="text/javascript"><!--
+google_ad_client = "ca-pub-2773853926535023";
+/* philosophistry rectangle */
+google_ad_slot = "2022967402";
+google_ad_width = 336;
+google_ad_height = 280;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+
+<br/>
+
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-18069474-2']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+<br/>
+
+<h1>Perl Kung-Fu: How to Setup an IE-Inbox</h1>
+<h2>by <a href="mailto:philblog@dhingra.org">phil</a> on Saturday Mar 20, 2004  1:04 PM 
+</h2>
+
+There is a magical folder on my Windows desktop where I can click-and-drag URL shortcuts directly into Philosophistry (this appears in the right-quadrant of my blog).  I can also kill links just as easily as I create them, by dragging them away into the recycle bin.  In other words, part of my site is a real-time portal into a directory on my computer.
+<P>
+For the curious, here's the way I did it.
+
+<br/>
+<P>First, I have <a href="http://hoohoo.ncsa.uiuc.edu/docs/tutorials/includes.html">server-side includes</a> enabled on my site, which allows scripts to be executed from my HTML before they reach visitors.
+<P>
+So in the source code of my index.shtml, it says:
+<P>
+<pre>
+&lt;!--#exec cmd="ie_inbox.pl"--&gt;
+</pre>
+<P>
+If you tried to "View Source" you would not see that line as the server strips it out before its served.  This is called "pre-processing."
+<P>
+That line executes the following Perl script.<P>
+
+<pre>
+#!perl
+
+$dir = "/Documents and Settings/Philip Dhingra/Desktop/ie_inbox/";
+
+opendir(DIR, $dir);
+@files = readdir(DIR);
+
+sort (@files);
+
+foreach $file (@files) {
+	if (-f "$dir$file" && $file =~ /\.url$/i) {
+		open URL, "$dir$file";
+		while (<URL>) {
+			if (/^URL=/) {
+				chomp;
+				$_ =~ s/^URL=//;
+				$file =~ s/\.URL$//i;
+				print "&lt;li&gt;&lt;A TARGET=_blank HREF=\"$_\"&gt;$file&lt;/A&gt\n";
+				close URL;
+				break;
+			}
+		}
+	}
+}
+</pre>
+
+<P>
+<I>(You may use this just sorta give credit where credit is due)</i>
+<P>
+In a nutshell, the script searches for all the .url files in a specified folder, opens them up, and then rips out the URL string.  It then uses the name of the file as the title of the site and then kicks out a hyperlink.  Easy as that.</MTIfNotEmpty>
+
+<br/> 
+<a rel="license" href="http://creativecommons.org/licenses/by/2.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by/2.0/80x15.png" /></a>
+
+
+</div> <!-- content -->
+
+
+</div> <!-- content_container -->
+</div> <!-- content_container_container -->
