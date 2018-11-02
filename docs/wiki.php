@@ -33,7 +33,7 @@ if ($_GET['note'])
 else
 	$note = "Home";
 
-$contents = file_get_contents('content/Wiki/' . $note . '.txt');
+$contents = file_get_contents('../content/Wiki/' . $note . '.txt');
 
 $title = preg_replace('/(.*){0,1}\/(.*)/','\2',$note);
 
