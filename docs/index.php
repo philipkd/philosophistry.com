@@ -23,7 +23,7 @@ a:visited {
 
 <?php
 
-$GLOBALS['indices'] = "./content/Indices";
+$GLOBALS['indices'] = dirname(__FILE__) . "/content/Indices";
 
 $GLOBALS['topics'] = array();
 
