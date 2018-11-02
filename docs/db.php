@@ -4,7 +4,7 @@
 # ini_set('display_errors', 1);
 ?> 
 
-<?
+<?php
 	include_once "markdown.php";
 
 	if (preg_match("/^local./", $_SERVER['HTTP_HOST']))
@@ -376,7 +376,7 @@ EOT;
 
 <div id="page">
 
-<?
+<?php
 
 	print_nav();
 
