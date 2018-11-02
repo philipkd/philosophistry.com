@@ -30,7 +30,7 @@
 	function print_nav_tags($tags) {
 	    foreach ($tags as $tag) {
 	    	$count = count($GLOBALS['tag_to_essays'][$tag]);
-		    echo "<img src=\"/tag.png\"> <a href=\"?tag=$tag\">" . titleify($tag) . "</a> ($count)<br/>\n";
+		    echo "<img src=\"/tag.png\"> <a href=\"$tag\">" . titleify($tag) . "</a> ($count)<br/>\n";
 		}
 	}
 
