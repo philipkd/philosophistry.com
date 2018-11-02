@@ -19,7 +19,7 @@ function MyMarkdown2($contents) {
 	foreach ($links as $link) {
 
 		$link = $link[1];
-		$newlink = "wiki.php?note=" . slug($link);
+		$newlink = slug($link);
 
 		$contents = preg_replace("#\($link\)#","($newlink)",$contents);
 	}
@@ -46,13 +46,13 @@ $title = preg_replace('/(.*){0,1}\/(.*)/','\2',$note);
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<link rel="stylesheet" href="wiki.css">
+<link rel="stylesheet" href="/wiki.css">
 
 <title><?= $title ?> (Philosophistry)</title>
 
 </head>
 
-<div class="site-title"><a href="wiki.php?note=Home">Philosophistry: The Love of Rhetoric</a></div>
+<div class="site-title"><a href="./">Philosophistry: The Love of Rhetoric</a></div>
 
 <div class="entry">
 
