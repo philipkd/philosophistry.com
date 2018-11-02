@@ -8,7 +8,7 @@ RewriteEngine on
 
 RewriteRule ^notes/(.*) /index.php?route=$1 [L]
 
-RewriteRule ^db/(.*) /db.php?tag=$1 [L]
+RewriteRule ^db/([^.]*)$ /db.php?tag=$1 [L]
 
 # RewriteCond "%{HTTP_HOST}" "^www.philosophistry.com$" [OR]
 # RewriteCond "%{HTTP_HOST}" "^local.philosophistry.com$" [OR]
