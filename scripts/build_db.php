@@ -15,8 +15,8 @@
     if ($argv[1])
     	$GLOBALS['tag_route'] = $argv[1];
 
-	$GLOBALS['files_dir'] = dirname(__FILE__) . "/../content/Files";
-	$GLOBALS['logs_dir'] = dirname(__FILE__) . "/../content/Logs";
+	$GLOBALS['files_dir'] = dirname(__FILE__) . "/../published/Files";
+	$GLOBALS['logs_dir'] = dirname(__FILE__) . "/../published/Logs";
 
 	$GLOBALS['essays'] = array();
 
@@ -411,7 +411,10 @@ ob_start();
  		echo "<br/><br/><br/><br/>";
  	}
 
- 	print "</div>";
+  	print '<p/>
+<a href="https://licensebuttons.net/l/by/4.0/"><img src="https://licensebuttons.net/l/by/4.0/80x15.png"></a><br/><br/>';
+
+	print "</div>";
 
 
 ?>
