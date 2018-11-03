@@ -15,8 +15,8 @@
     if ($argv[1])
     	$GLOBALS['tag_route'] = $argv[1];
 
-	$GLOBALS['files_dir'] = dirname(__FILE__) . "/../docs/content/Files";
-	$GLOBALS['logs_dir'] = dirname(__FILE__) . "/../docs/content/Logs";
+	$GLOBALS['files_dir'] = dirname(__FILE__) . "/../content/Files";
+	$GLOBALS['logs_dir'] = dirname(__FILE__) . "/../content/Logs";
 
 	$GLOBALS['essays'] = array();
 
@@ -364,9 +364,10 @@ EOT;
 <?php
 
 $tags = array_keys($GLOBALS['tag_to_essays']);
+array_push($tags,"index");
 foreach ($tags as $tag) {
 if (!special_tag($tag)) {
-$GLOBALS['tag_route'] = $tag;
+	$GLOBALS['tag_route'] = $tag;
 ob_start();
 ?>
 
@@ -393,7 +394,7 @@ ob_start();
 
 	print "<div id='content'>";
 
-	if ($GLOBALS['tag_route']) {
+	if ($GLOBALS['tag_route'] && $GLOBALS['tag_route'] != 'index') {
  		print_tag($GLOBALS['tag_route']);
  	} else {
 
