@@ -7,7 +7,7 @@ function slug($str) {
 }
 
 
-$folder = './content/Wiki';
+$folder = './published/Wiki';
 if ($folder_handle = opendir($folder)) {
 	while (false !== ($file = readdir($folder_handle))) {
 		if (preg_match('/\.txt$/',$file)) {
