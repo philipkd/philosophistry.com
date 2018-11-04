@@ -200,7 +200,7 @@
 		
 		<h2>Philosophistry: The Love of Rhetoric</h2>
 
-<div class="note-body"><p><i>Philosophistry</i> is a collection of <a href="http://philipkd.com/">Philip Dhingra</a>’s musings on everything including futurism, evolution, psychology, philosophy, and self-improvement. You can view my <a href="https://medium.com/philosophistry">complete essays on Medium</a> or my scratchpad on the site you are reading now. (<a href="/archives">est. 2003</a>).</p></div>
+<div class="note-body"><p><i>Philosophistry</i> is a collection of <a href="http://philipkd.com/">Philip Dhingra</a>’s musings on everything including futurism, evolution, psychology, philosophy, and self-improvement. You can view my <a href="https://medium.com/philosophistry">complete essays on Medium</a>, or you can peruse my scratchpad on the site you are reading now. Below is a wiki, and to the left are micro-essays. (<a href="/archives">est. 2003</a>)</p></div>
 
 EOT;
 	}
