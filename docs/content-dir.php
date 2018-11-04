@@ -1,0 +1,1 @@
+<?php $GLOBALS['content_dir'] = dirname(__FILE__) . "/../published"; ?>

@@ -20,7 +20,7 @@
 	$GLOBALS['slug_to_note'] = array();
 	$GLOBALS['note_to_contents'] = array();
 
-	$GLOBALS['note_dir'] = "../content/Preview";
+	$GLOBALS['note_dir'] = "../preview";
 
 	process_notes();
 

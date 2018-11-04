@@ -56,7 +56,7 @@ if ($title == 'index')
 
 </head>
 
-<div class="site-title"><a href="./">Philosophistry: The Love of Rhetoric</a></div>
+<div class="site-title"><a href="/">Philosophistry</a> <a href="/wiki/">Wiki</a></div>
 
 <div class="entry">
 
