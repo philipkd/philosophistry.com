@@ -1,10 +1,12 @@
+
 <?php
 	ini_set('error_reporting',E_ALL & ~E_NOTICE & ~E_STRICT & ~E_DEPRECATED);
 # ini_set('error_reporting', E_ALL);
 # ini_set('display_errors', 1);
+?> 
 
-	include_once "markdown.php";
-	include_once "content-dir.php";
+<?php
+	include_once "docs/markdown.php";
 
 	if (preg_match("/^local./", $_SERVER['HTTP_HOST']))
 		$GLOBALS['local_access'] = true;
@@ -14,8 +16,8 @@
     if ($argv[1])
     	$GLOBALS['tag_route'] = $argv[1];
 
-	$GLOBALS['files_dir'] = $GLOBALS['content_dir'] . "/Files";
-	$GLOBALS['logs_dir'] = $GLOBALS['content_dir'] . "/Logs";
+	$GLOBALS['files_dir'] = dirname(__FILE__) . "/../published/Files";
+	$GLOBALS['logs_dir'] = dirname(__FILE__) . "/../published/Logs";
 
 	$GLOBALS['essays'] = array();
 
@@ -29,18 +31,10 @@
 	process_notes();
 	process_logs();
 
-	if ($argv[1] == 'list') {
-		$tags = array_keys($GLOBALS['tag_to_essays']);
-	    foreach ($tags as $tag)
-	    	if (!special_tag($tag))
-	    		print "$tag\n";		
-	    exit;
-	}
-
 	function print_nav_tags($tags) {
 	    foreach ($tags as $tag) {
 	    	$count = count($GLOBALS['tag_to_essays'][$tag]);
-		    echo "<img src=\"/tag.png\"> <a href=\"/db/$tag\">" . titleify($tag) . "</a> ($count)<br/>\n";
+		    echo "<img src=\"/tag.png\"> <a href=\"$tag\">" . titleify($tag) . "</a> ($count)<br/>\n";
 		}
 	}
 
@@ -48,9 +42,9 @@
 
 		echo "<div id=\"nav\">";
 	    
-		echo "<b><a href=\"/\">Philosophistry</b></a><br/><br/>";
+		echo "<b><a href=\"/\">Philosophistry:<br/>The Love of Rhetoric</b></a><br/><br/>";
 
-		echo "<a href='/'>";
+		echo "<a href='.'>";
 
 	    echo count($GLOBALS['essays']);
 
@@ -201,50 +195,6 @@
  		}
 	}
 
-	function print_about() {
-		echo <<<EOT
-		
-		<h2>Philosophistry: The Love of Rhetoric</h2>
-
-<div class="note-body"><p><i>Philosophistry</i> is a collection of <a href="http://philipkd.com/">Philip Dhingra</a>’s musings on everything including futurism, evolution, psychology, philosophy, and self-improvement. You can view my <a href="https://medium.com/philosophistry">complete essays on Medium</a>, or you can peruse my scratchpad on the site you are reading now. Below is a wiki, and to the left are micro-essays. (<a href="/archives">est. 2003</a>)</p></div>
-
-EOT;
-	}
-
-	function wiki_slug($str) {
-		$str = preg_replace('/ /','_',$str);
-		$str = "/wiki/$str";
-		return $str;
-	}
-
-
-	function wiki_markdown($contents) {
-
-		include_once "markdown.php";
-
-		$contents = str_replace("#","####",$contents);
-
-		preg_match_all('/\[\[(.*?)\]\]/',$contents,$links, PREG_SET_ORDER);	
-
-		$contents = preg_replace('/\[\[((.*\/){0,1}(.*?))\]\]/','[\3](\1)',$contents);
-
-		foreach ($links as $link) {
-
-			$link = $link[1];
-			$newlink = wiki_slug($link);
-
-			$contents = preg_replace("#\($link\)#","($newlink)",$contents);
-		}
-
-		return Markdown($contents);
-	}
-
-	function print_wiki() {
-
-		echo wiki_markdown(file_get_contents($GLOBALS['content_dir'] . "/Wiki/index.txt"));
-
-	}
-
 	function print_book() {
 
 		echo <<<EOT
@@ -253,6 +203,81 @@ EOT;
 <center><a href="https://www.amazon.com/gp/product/1530775183/?tag=philosophistr-20">Available now in paperback and on Kindle<!-- <br/><br/><img src="books/philosophistry/cover-thumb.png" alt="Philosophistry book cover" /> --></a></center>
 </div>
 EOT;
+
+	}
+
+	function print_ideas_from_array($ideas) {
+		foreach ($ideas as $idea) {
+					$data = $GLOBALS['index']->ideas->$idea;
+
+					echo "<b><a href='?tag=_$idea'>" . $data->title . "</b> — " . $data->subtitle . "</a><br/><br/>"; 
+				}
+	}
+
+	function print_ideas() {
+
+		echo '<div class="note-body">';
+
+		print_ideas_from_array($GLOBALS['index']->live);
+
+		if ($GLOBALS['local_access']) {
+
+			echo "<br/>";
+
+			$unlive_ideas = array_diff(array_keys((array) $GLOBALS['index']->ideas), $GLOBALS['index']->live);
+
+			print_ideas_from_array($unlive_ideas);
+		}	
+
+
+		echo '</center></div>';
+	}
+
+	function print_top_essays() {
+
+		echo <<<EOT
+<h2>Top 9 Essays</h2>
+
+<ol>
+<li><a href="https://posts.philipkd.com/wobbly-tables-and-the-problem-with-futurism-934468d2308">Wobbly Tables and the Problem with Futurism</a></li>
+<li><a href="http://philosophistry.com/archives/2010/07/todays-what-if-what-if-knights-were-just-gangstas.html">What if Knights were just Gangstas?</a></li>
+<li><a href="https://www.reddit.com/r/writing/comments/1eje3d/random_thought_writing_is_attachment/">Writing is Attachment</a></li>
+<li><a href="https://www.reddit.com/r/StonerPhilosophy/comments/19bfoc/drawing_a_line_through_multiverses/">Drawing a Line Through Multiverses</a></li>
+<li><a href="https://www.reddit.com/r/politics/comments/c010j/southerners_like_to_believe_they_were_fighting/">Southerners like to believe they were fighting for their freedoms, when really they were fighting for Plantation owners' freedom to own slaves. You see a similar delusion with libertarians and their support of free markets.</a></li>
+<li><a href="https://posts.philipkd.com/the-problem-with-self-improvement-da6c303b6ed6">The Problem with Self-Improvement</a></li>
+<li><a href="https://posts.philipkd.com/the-wisdom-of-bored-inquiry-4e432d3ba46b">The Wisdom of Bored Inquiry</a></li>
+<li><a href="https://posts.philipkd.com/maybe-the-world-needs-a-narrow-state-d24140f8aa14">Maybe the World Needs a Narrow State</a></li>
+<li><a href="https://posts.philipkd.com/the-problem-with-our-understanding-of-ai-is-that-just-before-we-solve-a-challenge-like-mastering-aedd72d6a378">Hard vs Soft AI Problems</a>
+</ol>
+EOT;
+
+	}
+
+	function print_medium_plug() {
+
+		echo <<<EOT
+<h2><a href="https://medium.com/@philipkd/">New Essays on Medium</a></h2>
+EOT;
+
+	}
+
+	function print_contexts() {
+	    $tags = array_keys($GLOBALS['tag_to_essays']);
+	    usort($tags, "tag_count_sort");
+
+	    print "<h2>Special Tags</h2>";
+	    print '<div class="note-body">';
+
+	    foreach ($tags as $tag) {
+	    	if (special_tag($tag)) {
+		    	$count = count($GLOBALS['tag_to_essays'][$tag]);
+			    echo "<a href=\"?tag=$tag\">#$tag</a> " . ($count) . "<br/>\n";
+
+//			    echo "<a href=\"?tag=$tag\">" . capitalize_tag($tag) . "</a> ($count)<br/>\n";
+			}
+	    }
+
+	    print '</div>';
 
 	}
 
@@ -268,7 +293,7 @@ EOT;
 		echo "<div class=\"note-tags\">";
 	    foreach ($tags as $tag) {
 	    	if (special_tag($tag) && $GLOBALS['local_access'] || !special_tag($tag))
-		    	echo "<img src=\"/tag.png\"> <a href='/db/$tag'>" . $tag . "</a>\n";
+		    	echo "<img src=\"/tag.png\"> <a href='$tag'>" . $tag . "</a>\n";
 		}
 		echo "</div>";
 
@@ -337,6 +362,15 @@ EOT;
 
 ?>
 
+<?php
+
+$tags = array_keys($GLOBALS['tag_to_essays']);
+# array_push($tags,"index");
+foreach ($tags as $tag) {
+if (!special_tag($tag)) {
+	$GLOBALS['tag_route'] = $tag;
+ob_start();
+?>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
@@ -361,13 +395,11 @@ EOT;
 
 	print "<div id='content'>";
 
-	if ($GLOBALS['tag_route']) {
+	if ($GLOBALS['tag_route'] && $GLOBALS['tag_route'] != 'index') {
  		print_tag($GLOBALS['tag_route']);
  	} else {
 
- 		print_about();
-
- 		print_wiki();
+ 	// 	print_book();
 
 		// hr_tag();
 
@@ -375,12 +407,15 @@ EOT;
 
 		// hr_tag();
 
+ 		print_tag('_new');
+
+ 		echo "<br/><br/><br/><br/>";
  	}
 
- 	print '<br/><p/>
+  	print '<p/>
 <a href="https://licensebuttons.net/l/by/4.0/"><img src="https://licensebuttons.net/l/by/4.0/80x15.png"></a><br/><br/>';
 
- 	print "</div>";
+	print "</div>";
 
 
 ?>
@@ -388,3 +423,12 @@ EOT;
 </div>
 
 </body>
+
+
+<?php
+file_put_contents(dirname(__FILE__) . "/../docs/db/$tag.html", ob_get_contents());
+ob_end_clean();
+print "$tag.html\n";
+# exit;
+}}
+?>

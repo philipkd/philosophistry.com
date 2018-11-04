@@ -1,6 +1,6 @@
 <?php
 
-$archive_path = "/Users/phil/Lockbox/Archived/Writing/Projects/Blogs/Philosophistry Blog (2003-2014)/archives";
+$archive_path = dirname(__FILE) . "/../archives";
 
 $build_path = dirname(__FILE__) . "/../docs/archives";
 
