@@ -40,7 +40,7 @@
 	function print_nav_tags($tags) {
 	    foreach ($tags as $tag) {
 	    	$count = count($GLOBALS['tag_to_essays'][$tag]);
-		    echo "<img src=\"/tag.png\"> <a href=\"/db/$tag\">" . titleify($tag) . "</a> ($count)<br/>\n";
+		    echo "<img src=\"/images/icons/tag.png\"> <a href=\"/db/$tag\">" . titleify($tag) . "</a> ($count)<br/>\n";
 		}
 	}
 
@@ -268,7 +268,7 @@ EOT;
 		echo "<div class=\"note-tags\">";
 	    foreach ($tags as $tag) {
 	    	if (special_tag($tag) && $GLOBALS['local_access'] || !special_tag($tag))
-		    	echo "<img src=\"/tag.png\"> <a href='/db/$tag'>" . $tag . "</a>\n";
+		    	echo "<img src=\"/images/icons/tag.png\"> <a href='/db/$tag'>" . $tag . "</a>\n";
 		}
 		echo "</div>";
 
