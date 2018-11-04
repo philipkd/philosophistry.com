@@ -1,5 +1,7 @@
 <?php
 
+include_once('tools.php');
+
 # $cmd = `php docs/wiki.php 
 
 function slug($str) {
@@ -7,7 +9,7 @@ function slug($str) {
 }
 
 
-$folder = './published/Wiki';
+$folder = reldir() . '/../published/Wiki';
 if ($folder_handle = opendir($folder)) {
 	while (false !== ($file = readdir($folder_handle))) {
 		if (preg_match('/\.txt$/',$file)) {
@@ -20,7 +22,5 @@ if ($folder_handle = opendir($folder)) {
 		}
 	}
 }
-
-
 
 ?>
