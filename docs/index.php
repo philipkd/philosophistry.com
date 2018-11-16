@@ -54,7 +54,7 @@
 
 	    echo count($GLOBALS['essays']);
 
-	    echo " Entries</a><br/> by <a href='http://philipkd.com/'>Philip Dhingra</a><br/>\n";
+	    echo " Micro-essays</a><br/> by <a href='http://philipkd.com/'>Philip Dhingra</a><br/>\n";
 
 	    $tags = array_keys($GLOBALS['tag_to_essays']);
 	    usort($tags, "tag_count_sort");
@@ -305,7 +305,7 @@ EOT;
 		$tag = preg_replace('/_/',' ',$tag);
 		$tag = preg_replace('/^ /','',$tag);
 		$tag = preg_replace('/self-improvement/','Self-Improvement',$tag);
-		$tag = preg_replace('/^new$/','New',$tag);
+		$tag = preg_replace('/^new$/','New Micro-essays',$tag);
 
 		$tag = ucwords($tag);
 		return $tag;
@@ -370,6 +370,8 @@ EOT;
  		print_wiki();
 
 		// hr_tag();
+
+		print_tag("_new");
 
  	// 	print_medium_plug();
 
