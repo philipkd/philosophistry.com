@@ -49,3 +49,9 @@ hr {
 hr:before {
 	content: "\2666\00a0\00a0\00a0\00a0\00a0\2666\00a0\00a0\00a0\00a0\00a0\2666";
 }
+
+blockquote {
+	border-left: 5px solid lightgrey;
+	margin-left: 0px;
+	padding-left: 10px;
+}
