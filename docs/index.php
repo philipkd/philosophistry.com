@@ -17,6 +17,7 @@
 
 	$GLOBALS['files_dir'] = $GLOBALS['content_dir'] . "/Files";
 	$GLOBALS['logs_dir'] = $GLOBALS['content_dir'] . "/Logs";
+	$GLOBALS['tag_names_file'] = $GLOBALS['content_dir'] . "/Tags.txt";
 
 	$GLOBALS['essays'] = array();
 
@@ -27,8 +28,11 @@
 
 	# $GLOBALS['index'] = json_decode(file_get_contents("./content/index.json"));
 
+	$GLOBALS['tag_to_name'] = array();
+
 	process_notes();
 	process_logs();
+	process_tag_names();
 
 	if ($argv[1] == 'list') {
 		$tags = array_keys($GLOBALS['tag_to_essays']);
@@ -41,7 +45,7 @@
 	function print_nav_tags($tags) {
 	    foreach ($tags as $tag) {
 	    	$count = count($GLOBALS['tag_to_essays'][$tag]);
-		    echo "<img src=\"/images/icons/tag.png\"> <a href=\"/db/$tag\">" . titleify($tag) . "</a> ($count)<br/>\n";
+		    echo "<img src=\"/images/icons/tag.png\"> <a href=\"/db/$tag\">" . strtolower(tag_name_sub($tag)) . "</a> ($count)<br/>\n";
 		}
 	}
 
@@ -73,10 +77,10 @@
 	    print "<br/>Tags<br/>";
 	    	print_nav_tags($main_tags);
 
-		/* if ($GLOBALS['local_access']) {
+		if ($GLOBALS['local_access']) {
 		    print "<br/>Special Tags<br/>";
 		    print_nav_tags($special_tags);
-		} */
+		}
 
 	    echo "</div>";
 	}
@@ -127,6 +131,17 @@
 		}
 	}
 
+	function process_tag_names() {
+		$file = $GLOBALS['tag_names_file'];
+    	foreach(file($file) as $line) {
+    		$line = rtrim($line);
+    		$components =  preg_split('/:/',$line);
+    		$tag = $components[0];
+    		$name = $components[1];
+			$GLOBALS['tag_to_name'][$tag] = $name;
+		}
+	}
+
 	function process_logs() {
 		$folder = $GLOBALS['logs_dir'];
 		if ($log_handle = opendir($folder)) {
@@ -166,12 +181,22 @@
 		}
 	}
 
+	function tag_name_sub($tag) {
+ 		if($GLOBALS['tag_to_name'][$tag])
+ 			return $GLOBALS['tag_to_name'][$tag];
+ 		return $tag;
+	}
+
 
 	function print_tag($tag) {
  		$essays = $GLOBALS['tag_to_essays'][$tag];
  		natsort($essays);
 
-		echo "<h2>" . format_tag($tag) . "</h2>\n";
+ 		$tag_name = $tag;
+ 		if($GLOBALS['tag_to_name'][$tag])
+ 			$tag_name = $GLOBALS['tag_to_name'][$tag];
+
+		echo "<h2>" . ucwords(tag_name_sub($tag)) . "</h2>\n";
 
 		$idea = ltrim($tag, "_");
 
@@ -294,23 +319,6 @@ EOT;
     	return false;
 	}		
 
-
-	function format_tag($tag) {
-
-		$tag = ltrim($tag,"_");
-
-		if ($GLOBALS['index']->ideas->$tag) {
-			return $GLOBALS['index']->ideas->$tag->title;
-		}
-
-		$tag = preg_replace('/_/',' ',$tag);
-		$tag = preg_replace('/^ /','',$tag);
-		$tag = preg_replace('/self-improvement/','Self-Improvement',$tag);
-		$tag = preg_replace('/^new$/','New Micro-essays',$tag);
-
-		$tag = ucwords($tag);
-		return $tag;
-	}
 
 	function remove_tags($text) {
 		$text = preg_replace('/ *#.*/','',$text);
