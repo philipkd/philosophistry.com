@@ -190,6 +190,10 @@
 
 	function print_tag($tag) {
  		$essays = $GLOBALS['tag_to_essays'][$tag];
+ 		
+ 		if(!$essays)
+ 			return;
+ 		
  		natsort($essays);
 
  		$tag_name = $tag;
