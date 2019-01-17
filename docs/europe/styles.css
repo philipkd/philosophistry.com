@@ -1,0 +1,37 @@
+body {
+	background-color: #333333;
+	font-family: arial, sans-serif;
+	color: #eeeeee;
+}
+
+a, a:link, a:active, a:hover, a:visited { color: #ffff00; text-decoration: none; border-bottom: solid 1px #888888; }
+
+a:visited { color: #dddd00; } 
+
+li.selected, li.selected a:link, li.selected a, li.selected a:visited { font-weight: bold; color: #ffff00; }
+
+h1, h2, h3 {
+	margin: 0;	
+}
+
+h1 { margin-bottom: 15px; font-size: 1.25em; }
+
+h2 { font-size: 1.1em; }
+
+h3 { font-size: 1em; }
+
+
+p.boxright {
+	width: 700px; text-align: right; font-style: italic; font-size:small; margin-bottom: 20px;
+}
+
+p.footnote {
+	font-size:.8em;
+	color: #aaaaaa;
+}
+
+p.footnote a, p.footnote a:link, p.footnote a:visited, p.footnote a:active, p.footnote a:hover {
+	color: #eeeeee;
+}
+
+li { margin-bottom: .5em; }

@@ -1,0 +1,93 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>DIY Map</title>
+</head>
+<body style="font-family:verdana;color:#999;">
+
+<script type="text/javascript" src="js/JavaScriptFlashGateway.js"></script>
+<script type="text/javascript" src="js/Exception.js"></script>
+<script type="text/javascript" src="js/FlashTag.js"></script>
+<script type="text/javascript" src="js/FlashSerializer.js"></script>
+<script type="text/javascript" src="js/FlashProxy.js"></script>
+
+<script type="text/javascript">
+	var uid = new Date().getTime();
+	var flashProxy = new FlashProxy(uid, 'js/JavaScriptFlashGateway.swf');
+    var tag = new FlashTag('../europe.swf?data_file=../data.xml', 600, 325);
+    tag.setFlashvars('lcId='+uid);
+    tag.write(document);
+</script>
+
+
+<p><a href="javascript:flashProxy.call('zoomOut');">Zoom Out</a>
+&nbsp; | &nbsp; 
+<select onchange="javascript:flashProxy.call('zoomTo', this.options[this.selectedIndex].value)">
+<option value="">Zoom to:</option>
+<option value="AL">Albania</option>
+<option value="AJ">Azerbaijan</option>
+<option value="AM">Armenia</option>
+<option value="AN">Andorra</option>
+<option value="AU">Austria</option>
+<option value="AZ">Azores (Pt.)</option>
+<option value="BK">Bosnia and Herzegovina</option>
+<option value="BO">Belarus</option>
+<option value="BE">Belgium</option>
+<option value="BU">Bulgaria</option>
+<option value="CP">Canary Islands (Sp.)</option>
+<option value="CY">Cyprus</option>
+<option value="DA">Denmark</option>
+<option value="EI">Ireland</option>
+<option value="EN">Estonia</option>
+<option value="EZ">Czech Republic</option>
+<option value="FO">Faroe Islands</option>
+<option value="FI">Finland</option>
+<option value="FR">France</option>
+<option value="GG">Georgia</option>
+<option value="GI">Gibraltar (UK)</option>
+<option value="GK">Guernsey</option>
+<option value="GM">Germany</option>
+<option value="GR">Greece</option>
+<option value="HR">Croatia</option>
+<option value="HU">Hungary</option>
+<option value="IC">Iceland</option>
+<option value="IM">Isle of Man</option>
+<option value="IT">Italy</option>
+<option value="JE">Jersey</option>
+<option value="JN">Jan Mayen</option>
+<option value="LG">Latvia</option>
+<option value="LO">Slovakia</option>
+<option value="LS">Liechtenstein</option>
+<option value="LH">Lithuania</option>
+<option value="LU">Luxembourg</option>
+<option value="MD">Moldova</option>
+<option value="ME">Madeira (Pt.)</option>
+<option value="MK">Macedonia</option>
+<option value="MN">Monaco</option>
+<option value="MT">Malta</option>
+<option value="NL">Netherlands</option>
+<option value="NO">Norway</option>
+<option value="PL">Poland</option>
+<option value="PO">Portugal</option>
+<option value="RO">Romania</option>
+<option value="RS">Russian Federation</option>
+<option value="SI">Slovenia</option>
+<option value="SM">San Marino</option>
+<option value="SP">Spain</option>
+<option value="SR">Serbia and Montenegro</option>
+<option value="SV">Svalbard</option>
+<option value="SW">Sweden</option>
+<option value="SZ">Switzerland</option>
+<option value="TU">Turkey</option>
+<option value="UK">United Kingdom</option>
+<option value="UP">Ukraine</option>
+<option value="VT">Vatican City</option>
+</select>
+</p>
+
+
+<p style="font-family:sans;font-size:small;"><a href="http://backspace.com/mapapp/">Powered by DIY Map</a></p>
+
+</body>
+</html>

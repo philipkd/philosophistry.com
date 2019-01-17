@@ -167,6 +167,7 @@
 
 <link rel="shortcut icon" href="/favicon.ico" >
 <link rel="stylesheet" href="/preview.css" type="text/css" />
+<link rel="stylesheet" href="https://glyph.medium.com/css/e/sr/latin/e/ssr/latin/e/ssb/latin/m2.css" type="text/css" />
 </head>
 
 <body>

@@ -1,0 +1,1229 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><!--script src="/ADL_script.js" language="javascript"></script--><script language="JavaScript">
+	var offsetX = 0;
+	var offsetY = 0;
+	var selectedObj;
+	var frontObj;
+
+	document.onmousedown = engage;
+	document.onmouseup = release;
+
+	function bringToFront(obj) {
+		if (frontObj) {
+			frontObj.style.zIndex = 0
+		}
+		frontObj = obj
+		frontObj.style.zIndex = 1
+	}
+
+	function shiftTo(obj, x, y) {
+		obj.style.pixelLeft = x
+		obj.style.pixelTop = y
+	}
+
+	function setSelectedObj() {
+		var imgObj = window.event.srcElement
+		if (imgObj){
+		if (imgObj.id.indexOf("map") == 2) {
+			selectedObj = imgObj
+			return
+		}
+		selectedObj = null
+		}
+		return
+	}
+
+	function dragIt() {
+		if (selectedObj) {
+			shiftTo(selectedObj, (event.clientX - offsetX), (event.clientY - offsetY))
+			shiftTo(document.all["divWBC"], (event.clientX - offsetX), (event.clientY - offsetY))
+			return false
+		}
+	}
+
+	function engage() {
+		setSelectedObj()
+		if (selectedObj) {
+			document.onmousemove = dragIt
+			offsetX = window.event.offsetX - document.body.scrollLeft
+			offsetY = window.event.offsetY - document.body.scrollTop
+		}
+	}
+
+	function release() {
+		if (selectedObj) {
+			document.onmousemove = null
+			selectedObj = null
+		}
+	}
+
+	function showHand(){
+
+	}
+
+	function hideHand(){
+
+	}
+	
+	//function LoadPage( link ) {
+ 		//window.close();
+       //     	parent.window.opener.location = link;
+	//}
+
+
+	
+	
+		 //Revised by Patrick
+		function LoadPage( link ) 
+		{
+  		if (window.opener && !window.opener.closed)
+			{
+				//
+    			parent.window.opener.location = link;
+  				//window.close();
+				self.blur()
+				parent.window.opener.focus()
+ 		 	}
+  		else
+			{
+			document.location = link
+		}
+	}
+	
+	
+	
+	function timeOffset()
+	{
+	var offSet;
+	var localDate = new Date();
+	offSet = localDate.getTimezoneOffset() / 60;
+	return offSet;
+	}
+
+</script><!-- returns offset of hours from GMT timezone --><!--- DisplayBreakingNews2 Function with redesigned table layout ---><!------------------------------------------------------------------>
+
+<meta http-equiv="expires" content="0">
+<meta http-equiv="Pragma" content="no-cache">
+<meta name="DESCRIPTION" content="Despite good faith efforts by government and the international community to counteract the anti-Semitism plaguing Europe, millions of Europeans continue to believe the classical anti-Semitic canards that have dogged Jews through the centuries, according to a new poll released by the Anti-Defamation League (ADL) today.">
+<meta name="KEYWORDS" content="adl, anti-defamation, anti-semitism, europe, austria, belgium, denmark, france, germany, hungary,  italy, poland, spain, switzerland, united kingdom, jews, israel, osce, cordoba, holocaust, jewish, antisemitic, foxman">
+<meta name="Category" content="Press Release"><title>ADL Survey in 12 European Countries Finds Anti-Semitic Attitudes Still Strongly Held</title>
+
+
+
+	
+<link rel="stylesheet" type="text/css" href="4726_13_files/ADL_Main_new.css">
+<script src="4726_13_files/ADL_script.js" language="javascript"></script><!-- Inserted by Content Management Server: BEGIN EmbedTmplHeadHook -->
+
+
+
+		<script language="JavaScript" src="4726_13_files/Dates.htm" type="text/javascript"></script>
+		<script language="JavaScript" src="4726_13_files/Windows.htm" type="text/javascript"></script>
+		<script language="JavaScript" src="4726_13_files/CommonClient.htm" type="text/javascript"></script>
+	<meta name="ROBOTS" content="FOLLOW,INDEX"><!-- Inserted by Content Management Server: END EmbedTmplHeadHook --></head>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<body topmargin="0" leftmargin="0" bgcolor="#ffffff" marginheight="0" marginwidth="0">
+<!-- Inserted by Content Management Server: BEGIN EmbedBodyBeginHook -->
+
+<!-- Inserted by Content Management Server: END EmbedBodyBeginHook -->
+
+<font face="Arial, Helvetica, sans-serif" size="2">
+<!-- Start Table #1 -  Navigation Table -->
+ <!--Start Top SEction with Navigation -->
+<table border="0" cellpadding="0" cellspacing="0" width="750">
+  
+<tbody><tr>
+<td colspan="3">
+
+<table valign="top" align="left" border="0" cellpadding="0" cellspacing="0" width="750">
+<tbody><tr>
+<td colspan="3">
+<br>
+<img src="4726_13_files/element_slogan_750.gif" alt="" border="0" height="17" width="750"></td></tr>
+
+<tr>
+<td align="right" valign="top" width="179"><a href="http://www.adl.org/default.htm">
+<img src="4726_13_files/img_logo.gif" alt="ADL Home" border="0" height="98" width="179"></a></td>
+
+<td align="right" valign="top" width="217">
+<img src="4726_13_files/img_main_central3.gif" alt="image" border="0" height="94" width="193"></td>
+
+<td align="left">
+		
+		
+<!-- TOP NAVIGATION  STARTS-->
+<table border="0" cellpadding="0" cellspacing="0" width="173">
+<tbody><tr>
+<td>
+
+
+
+  
+<table border="0" cellpadding="0" cellspacing="0" width="173">
+<tbody><tr>
+<td colspan="2" valign="top"><a href="http://www.adl.org/default.htm"><img src="4726_13_files/b_home_3.gif" alt="HOME" border="0" height="19" width="36"></a></td>
+
+<td valign="top"><a href="http://www.adl.org/main_regional.asp"><img src="4726_13_files/b_regional_3.gif" alt="REGIONAL OFFICES" border="0" height="19" width="110"></a></td>
+
+<td valign="top"><a href="http://www.adl.org/PresRele/breaking_news.asp"><img src="4726_13_files/b_press_center_3.gif" alt="PRESS CENTER" border="0" height="19" width="89"></a></td>
+
+<td valign="top"><a href="http://www.adl.org/main_about_adl.asp"><img src="4726_13_files/b_about_3.gif" alt="ABOUT" border="0" height="19" width="70"></a></td>
+
+<td valign="top"><a href="http://www.adl.org/main_contact.asp"><img src="4726_13_files/b_contact_3.gif" alt="CONTACT US" border="0" height="19" width="71"></a></td>
+</tr></tbody></table>
+
+
+
+</td></tr>
+<tr><td>
+
+<!-- TOP NAVIGATION  ENDS-->
+
+
+
+<!--CONTRIBUTE BUTTON --->
+<table border="0" cellpadding="0" cellspacing="0" width="173">
+<tbody><tr>
+<td colspan="5" bgcolor="#ffffff" valign="top" width="173">
+
+
+<table border="0" cellpadding="0" cellspacing="0" width="173">
+<tbody><tr>
+<td valign="top"><a target="_top" href="http://support.adl.org/site/Donation?ACTION=SHOW_DONATION_OPTIONS&amp;CAMPAIGN_ID=1082"><img src="4726_13_files/b_contribute8.gif" alt="SUPPORT ADL" border="0"></a></td><td valign="top"><a target="_top" href="http://support.adl.org/site/PageServer?pagename=tribute"><img src="4726_13_files/b_ecards8.gif" alt="SEND E-CARDS" border="0"></a>
+</td><td valign="top"><a target="_top" href="http://support.adl.org/site/PageServer?pagename=quickreg"><img src="4726_13_files/b_subscribe7a.gif" alt="SUPPORT ADL" border="0"></a></td>
+</tr></tbody></table>
+
+
+
+</td>
+</tr>
+</tbody></table>
+
+
+<!--CONTRIBUTE BUTTON ENDS-->
+
+
+
+</td></tr></tbody></table>
+				  
+</td>
+</tr>
+</tbody></table>
+
+</td>
+</tr>
+<tr><td colspan="3">
+
+
+
+
+
+
+		
+
+<!-- Start Table #2 - Body Table -->
+<table align="center" border="0" cellpadding="0" cellspacing="0" width="750">
+<tbody><tr>
+<!-- Spacer Gif -->
+<script language="JavaScript" type="text/javascript">
+		<!--
+        if ((navigator.appName == "Netscape") && (navigator.appVersion < "5")){
+		document.write('<td bgcolor="#e1e0a6"><img src="/images/spacer_tr.gif" width="2" height="1" border="0" alt=""></td>');
+		document.close();
+		}
+		// -->
+</script> 
+	 
+	 
+	 <script language="JavaScript">
+<!--
+function News_expandIt(whichEl){
+    whichEl.style.display = (whichEl.style.display == "none" ) ? "" : "none";
+	whichIm = event.srcElement;
+	whichIm.src = (whichEl.style.display == "none" ) ? "http://www.adl.org/images_cms/arrow_up.gif" : "http://www.adl.org/images_cms/arrow_down.gif";
+	}
+// --></script>
+	 
+	 
+	 
+<!-- Column #1 -- Start of Table of Contents -->	
+<td class="yellowcol" align="left" bgcolor="#f9f8d5" valign="top" width="100">
+ <!--Start Learn Include -->
+
+<!--ADL in Action  -->
+
+	   
+</td>
+</tr>
+
+<tr><!-- Start column one -->
+<td valign="top">
+
+
+ <!--Start Include -->
+
+
+ 
+
+
+
+<a href="http://www.adl.org/main_anti_semitism.asp"></a>
+<a href="http://www.adl.org/main_arab_world"></a>
+<a href="http://www.adl.org/anti_semitism_domestic/"></a>
+
+
+<a href="http://www.adl.org/main_civil_rights.asp"></a>
+<a href="http://www.adl.org/civil_rights/ab"></a>
+
+
+<a href="http://www.adl.org/main_civil_rights.asp"></a>
+<a href="http://www.adl.org/learn/hate_crimes_laws/map_frameset.html"></a>
+<a href="http://www.adl.org/hate_symbols/"></a>
+
+<a href="http://www.adl.org/internet/"></a>
+
+<a href="http://www.adl.org/education/"></a>
+<a href="http://www.adl.org/education/edu_awod/default_awod.asp"></a>
+<a href="http://www.adl.org/education/default_campus.asp"></a>
+
+
+
+<a href="http://www.adl.org/main_combating_hate.asp"></a>
+<a href="http://www.adl.org/learn/ext_us/"></a>
+<a href="http://www.adl.org/Terror/tu/tu_1103_pakistan.asp"></a>
+<a href="http://www.adl.org/learn/Events_2001/events_2003_flashmap.asp"></a>
+
+
+
+
+<a href="http://www.adl.org/education/edu_holocaust/default_holocaust.asp"></a>
+<a href="http://www.adl.org/education/dimensions/default.asp"></a>
+
+<a href="http://www.adl.org/main_interfaith.asp"></a>
+
+<a href="http://www.adl.org/main_israel.asp"></a>
+<a href="http://www.adl.org/israel/advocacy/"></a>
+<a href="http://www.adl.org/Israel/israel_attacks.asp"></a>
+<a href="http://www.adl.org/Israel/israel_protest_calendar.asp"></a>
+
+
+<a href="http://www.adl.org/learn"></a>
+<a href="http://www.adl.org/learn/ext_us/"></a>
+<a href="http://www.adl.org/learn/safety/"></a>
+<a href="http://www.adl.org/learn/Events_2001/events_2003_flashmap.asp"></a>
+<a href="http://www.adl.org/learn/extremism_in_the_news/"></a>
+<a href="http://www.adl.org/learn/adl_law_enforcement/"></a>
+
+
+<a href="http://www.adl.org/main_religious_freedom.asp"></a>
+<a href="http://www.adl.org/issue_religious_freedom/religious_ac/accommodation_QA.asp"></a>
+<a href="http://www.adl.org/issue_education/december_dilemma2.asp"></a>
+<a href="http://www.adl.org/issue_religious_freedom/create/creationism2.asp"></a>
+<a href="http://www.adl.org/10comm/intro.asp"></a>
+
+<a href="http://www.adl.org/security"></a>
+
+
+
+<a href="http://www.adl.org/main_terrorism.asp"></a>
+<a href="http://www.adl.org/ict"></a>
+<a href="http://www.adl.org/Terror/tu/tu_1103_pakistan.asp"></a>
+<!-- End Include -->
+
+
+<table border="0" cellpadding="0" cellspacing="0" width="138">
+<tbody><tr>				 
+<td width="2"><img src="4726_13_files/spacer_002.gif" width="4"></td>
+<td align="center">
+<form action="/cgi-bin/MsmFind.exe" name="MONDOSEARCHFORM" method="get">
+<input name="QUERY_ENCODING" value="UTF-8" type="hidden">
+<input name="CFGNAME" value="MssFind.cfg" type="hidden">
+<input name="QUERY" value="SEARCH" size="10" class="adl_search_box" maxlength="100" onfocus="if(this.value=='SEARCH') {this.value='';}" onblur="if(this.value==''){this.value='SEARCH';}" type="text">
+</form></td>
+				
+<!--input type="text" name="e_mail" value="Enter E-Mail" size="11" maxlength="75" style="font-size:10px; font-family:Verdana,Arial,Helvetica; color:#B91931" onFocus="if(this.value=='Enter E-Mail') {this.value='';}" onBlur="if(this.value==''){this.value='Enter E-Mail';}">
+<INPUT TYPE="TEXT" NAME="QUERY" SIZE="10" CLASS="adl_new" VALUE="SEARCH" maxlength="100"-->				
+
+<td align="center" valign="top" width="50"><input src="4726_13_files/b_search2.gif" alt="Search" border="0" height="31" type="image" width="30"></td>
+</tr>
+
+<tr><td colspan="2"></td>
+</tr>			
+</tbody></table>
+
+
+
+<table border="0" cellpadding="0" cellspacing="0" width="138">
+
+
+<tbody><tr>
+<td bgcolor="#ffffff" valign="top"><img src="4726_13_files/spacer_003.gif" border="0" height="3" width="30"></td>
+</tr>
+<!--<tr>
+<td bgcolor="#ffffff" align="center"><font color="#000000"><b>ADL <i>in</i> ACTION</b></font></td>
+</tr>-->
+</tbody></table>
+
+
+<script type="text/javascript">
+function Go(){return}
+</script>
+
+<script src="4726_13_files/ADL_flyoutmenu_var_created_test7a.js" type="text/javascript"></script>
+
+<script src="4726_13_files/ADL_flyoutmenu_com2.js" type="text/javascript"></script>
+
+	
+	
+<img alt="" src="4726_13_files/spacer_003.gif" border="0" height="377" width="1">
+
+
+
+
+<!-- End Include -->
+
+<!--ADL Newsletter include -->
+ <!--Start Top SEction with Navigation -->
+<!--<table width="135" border="0" cellpadding="3" cellspacing="0"><form action="http://e-newsletters.internet.com/cgi-bin/subscribe" method="post" name="sub2col" >
+
+<input type=hidden name="redirect_ok" value="http://e-newsletters.internet.com/opt-in/clickz.html">
+
+<input type=hidden name="A" value="1">
+<tr><td colspan="2" class="adl_subscribe" align="center">Get ADL Newsletter</td></tr>
+
+<tr><td valign="top">
+<input type="text" name="email" value="your@email" size="12" onFocus="clearField()" style="font-size:10px; font-family:Verdana,Arial,Helvetica; color:#B91931">
+
+<input type="hidden" name="List_Name" value="email-marketing.htm"></td>
+
+<td><input type="submit" name="Submit" value="Send" class="czSubFormButtonStd"></td></tr>
+
+</table>
+
+<table border="0" cellpadding="3" cellspacing="0">
+
+
+<tr><td valign="top">
+
+
+<input type=radio name="Action" value="subscribe" checked style="font-size:9px; font-family:Verdana,Arial,Helvetica;"> Subscribe </td>
+	
+<td valign="top">
+<input type=radio name="Action" value="unsubscribe"> Unsubscribe</td></tr>
+
+
+<tr><td colspan="2"><IMG height=2 alt="" src="images_new/Elements/spacer.gif" width=1 border=0></td></tr></form></table>-->
+<!-- End Top Section --> 
+<img alt="" src="4726_13_files/spacer_003.gif" border="0" height="35" width="1">
+
+<table valign="top" border="0" cellpadding="0" cellspacing="0" width="138">
+<tbody><tr>
+<td class="bk10" bgcolor="#42759c" width="100%">
+
+
+
+<table align="center" border="0" cellpadding="0" cellspacing="0" width="100%">
+<tbody><tr>
+<td colspan="2" class="adl_newshead"><img src="4726_13_files/spacer_003.gif" alt="" border="0" height="5" width="44"></td>
+</tr>
+
+<tr>
+<td colspan="2" class="adl_newshead" align="center">STAY INFORMED !!
+</td>
+</tr>
+
+
+
+
+<tr>
+<td colspan="2" class="adl_newshead" align="center"><img src="4726_13_files/spacer_003.gif" alt="" border="0" height="5" width="1"></td>
+</tr>
+
+<tr>
+<td colspan="2" class="bk10b" align="center" bgcolor="#ffffff"><img src="4726_13_files/spacer_003.gif" alt="" border="0" height="1" width="1"></td>
+</tr>
+
+
+
+<tr>
+<td colspan="2" class="adl_subscribe" align="center" bgcolor="#2d526e">Subscribe to ADL's weekly newsletter</td>
+</tr>
+
+
+<tr>
+<td colspan="2" align="center" bgcolor="#ffffff"><img src="4726_13_files/spacer_003.gif" alt="" border="0" height="1" width="1"></td>
+</tr>
+
+
+
+<tr>
+<td colspan="2"><img src="4726_13_files/spacer_003.gif" alt="" border="0" height="5" width="1"></td>
+</tr>
+
+
+<tr>
+<td align="center" valign="middle">
+
+<a href="http://support.adl.org/site/PageServer?pagename=quickreg"><img src="4726_13_files/b_subscribe_yellow.gif" alt="subscribe" border="0" height="23" width="92"></a>
+
+ </td>
+</tr>
+
+
+
+</tbody></table></td></tr>
+
+
+<tr>
+<td><img src="4726_13_files/spacer_003.gif" alt="" border="0" height="1" width="1"></td>
+</tr></tbody></table>	
+</td>  
+	  
+<!-- Column #2 - Body Section-->
+<td align="left" bgcolor="#ffffff" valign="top" width="475">		
+	<table align="center" border="0" cellpadding="0" cellspacing="0" width="100%">
+	<tbody><tr>
+	<!-- Spacer Gif -->
+	<script language="JavaScript" type="text/javascript">
+	<!--
+	if ((navigator.appName == "Netscape") && (navigator.appVersion < "5")){
+	document.write('<td bgcolor="#e1e0a6" rowspan="2"><img src="/spacer_tr.gif" width="2" height="1" border="0" alt=""></td>');
+	document.close();
+	}
+	// -->
+	</script>
+	</tr>
+			
+	<tr>
+	<td align="center">
+		
+		
+	
+		<table border="0" cellpadding="5" cellspacing="0" width="400">
+		<tbody><tr>
+		<td class="bk12">Press Release</td><td class="bk12" align="right">Anti-Semitism: International</td>
+		</tr>
+		
+		<tr>
+		<td colspan="2"><img src="4726_13_files/pix_black.gif" alt="RULE" border="0" height="1" vspace="0" width="390"></td>
+		</tr>
+		
+		<tr>
+		<td colspan="2" class="bk10">
+
+		<font color="#ff0000" size="5"></font>
+		
+		<span class="blue16b">ADL Survey in 12 European Countries Finds Anti-Semitic Attitudes Still Strongly Held</span>
+		
+		<br><br>
+		
+		<p><font size="1"><font size="2">New
+York, NY, June 7, 2005 &#8230; Despite good faith efforts by government and
+the international community to counteract the anti-Semitism plaguing
+Europe, millions of Europeans continue to believe the classical
+anti-Semitic canards that have dogged Jews through the centuries,
+according to a new poll released by the Anti-Defamation League (ADL)
+today.&nbsp; A survey of 12 European countries revealed that a
+plurality of Europeans believe Jews are not loyal to their country and
+that they have too much power in business and finance.&nbsp; The
+opinion survey of 6,000 adults &#8211; 500 in each of the 12 European
+countries &#8211; found either minimal decline, no change or, in some cases,
+an increase in negative attitudes toward Jews from its 2004 findings.</font></font></p>
+<p><font size="1"><font size="2">The survey, <em><a href="http://www.adl.org/anti_semitism/european_attitudes_may_2005.pdf" target="_blank">Attitudes Toward Jews in Twelve European Countries</a></em>,
+was released to coincide with the Conference on Anti-Semitism and on
+Other Forms of Intolerance sponsored by the Organization for Security
+and Cooperation in Europe (OSCE), in <a href="http://www.adl.org/main_International_Affairs/osce_cordoba_1.htm">Cordoba</a>,
+Spain June 8-9. The countries surveyed were: Austria, Belgium, Denmark,
+France, Italy, Germany, The Netherlands, Spain, Switzerland, the United
+Kingdom, and for the first time, Hungary and Poland. </font></font></p>
+<p><font size="1"><font size="2">Respondents across the continent were
+asked a series of indicator questions representing the most pernicious
+notions of anti-Semitism and whether or not they thought the following
+four statements were "probably true" or "probably false."</font></font></p>
+<p style="margin-right: 0px;" dir="ltr"><font size="1"><font size="2">&#8226;&nbsp;Jews are more loyal to Israel than to this country.<br>&#8226;&nbsp;Jews have too much power in the business world.<br>&#8226;&nbsp;Jews have too much power in international financial markets.<br>&#8226;&nbsp;Jews still talk too much about what happened to them in the Holocaust </font></font></p>
+<p><font size="1"><font size="2">Respondents were also asked whether they agree or disagree with the following statement:<br></font></font><font size="1"><font size="2">&#8226;&nbsp;The Jews are responsible for the death of Christ</font></font></p>
+<p><font size="1"><font size="2">Finally, respondents were asked:<br></font></font><font size="1"><font size="2">&#8226;
+If their opinion of Jews was influenced by actions taken by the State
+of Israel and whether they believed the violence directed against
+European Jews was a result of anti-Jewish feelings or anti-Israel
+sentiment. </font></font></p>
+<p><font size="1"><font size="2"><strong>Findings Summary</strong>&nbsp;&nbsp;&nbsp;</font></font></p>
+<p><font size="1"><font size="2">&#8226; A plurality of those surveyed across
+Europe, 43 percent, believe that Jews are more loyal to Israel than to
+their own country, with a majority of respondents in Italy, Germany,
+Poland and Spain saying they believe that this statement is "probably
+true." </font></font></p>
+<p><font size="1"><font size="2">&#8226; Alarmingly high levels of those
+surveyed across Europe still believe in the traditional anti-Jewish
+canard that "Jews have too much power in the business world." Overall,
+nearly 30 percent of all respondents believe this stereotype to be
+true. </font></font></p>
+<p><font size="1"><font size="2">&#8226; Similarly, European respondents
+still adhere to the notion that "Jews have too much power in
+international financial markets." Overall, 32 percent of those surveyed
+cling to the traditional stereotype. </font></font></p>
+<p><font size="1"><font size="2">&#8226; Large portions of the European
+public continue to believe that Jews still talk too much about what
+happened to them in the Holocaust. Overall, 42 percent of those
+surveyed believe it is "probably true." In fact, a plurality of
+respondents in Austria, Germany, Hungary, Italy, Poland, Spain and
+Switzerland believe this notion to be true. </font></font></p>
+<p><font size="1"><font size="2">&#8226; Overall, 20 percent of those surveyed across Europe continue to blame Jews for the death of Jesus. </font></font></p>
+<p><font size="1"><font size="2">&#8226; Overall, 29 percent of those
+surveyed across Europe say that their opinion of Jews is influenced by
+the actions taken by the State of Israel. </font></font></p>
+<p><font size="1"><font size="2">&#8226; Of those respondents whose opinions
+are influenced, a majority, 53 percent, say that their opinion of Jews
+is worse as a result of the actions taken by Israel.<br>&nbsp;<br>"The
+findings of this survey demonstrate that individual governments, the EU
+and the OSCE, who have condemned anti-Semitism and sought ways to
+counteract it, are being challenged to find a formula that will break
+down the old stereotypes that die hard," said Abraham H. Foxman, ADL
+National Director.&nbsp; </font></font></p>
+<p><font size="1"><font size="2">"Millions of Europeans still accept a
+wide range of traditional anti-Semitic stereotypes, including the
+charge that Jews are more loyal to Israel than to their home
+country.&nbsp; These attitudes help incite and legitimize anti-Semitism
+and, coupled with an atmosphere where violence against Jews is still
+prevalent, give us great cause for concern."<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br><strong>Country by Country Findings</strong><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br>In responding "probably true" to the statement, "Jews are more loyal to Israel than their own country," the 2005 survey found:<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br>Austria - 38%, down from 46%<br>Belgium &#8211; 41%, down from 46%<br>Denmark - 43% up from 37%<br>France &#8211; 29%, up from 28%<br>Germany &#8211; 50%, no change <br>Italy &#8211; 55%, down from 57%<br>The Netherlands &#8211; 36%, down from 44%<br>Spain - 51%, up from 48%<br>Switzerland - 38%, down from 46% <br>The United Kingdom &#8211; 38% down from 40%<br>Hungary &#8211; 38%<br>Poland &#8211; 52%</font></font></p>
+<p><font size="1"><font size="2">In responding "probably true" to the statement, "Jews have too much power in the business world," the 2005 survey found:</font></font></p>
+<p><font size="1"><font size="2">Austria &#8211; 24%, down from 25% in 2004<br>Belgium &#8211; 33%, down from 37%<br>Denmark - 11% up from 9%<br>France &#8211; 25%, down from 33%<br>Germany &#8211; 20%, down from 24%<br>Italy &#8211; 33%, up from 29%<br>The Netherlands &#8211; 18% no change<br>Spain &#8211; 45%, down from 47% <br>Switzerland &#8211; 26%, down from 35% <br>The United Kingdom &#8211; 14% down from 20%<br>Hungary &#8211; 55%<br>Poland &#8211; 43%</font></font></p>
+<p><font size="1"><font size="2">In responding "probably true" to the
+statement "Jews have too much power in international final markets,"
+the 2005 survey found: <br>&nbsp;<br>Austria &#8211; 33%, down from 36% in 2004<br>Belgium &#8211; 33%, down from 36%<br>Denmark - 21% up from 18%<br>France &#8211; 24%, down from 29%<br>Germany &#8211; 24%, down from 27%<br>Italy &#8211; 32%, up from 31%<br>The Netherlands &#8211; 19% no change<br>Spain &#8211; 54%, up from 53% <br>Switzerland &#8211; 30%, down from 38% <br>The United Kingdom &#8211; 16% down from 18%<br>Hungary &#8211; 55%<br>Poland &#8211; 43%</font></font></p>
+<p><font size="1"><font size="2">In responding "probably true" to the
+statement "Jews still talk too much about what happened to them in the
+Holocaust," the 2005 survey found: </font></font></p>
+<p><font size="1"><font size="2">Austria &#8211; 46%, down from 54% in 2004<br>Belgium &#8211; 41%, up from 40%<br>Denmark - 35% up from 29%<br>France &#8211; 34%, down from 35%<br>Germany &#8211; 48%, down from 56%<br>Italy &#8211; 49%, up from 44%<br>The Netherlands &#8211; 34%, down from 39%<br>Spain &#8211; 46%, up from 41% <br>Switzerland &#8211; 48%, down from 49% <br>The United Kingdom &#8211; 28% down from 31%<br>Hungary &#8211; 46%<br>Poland &#8211; 52%</font></font></p>
+<p align="right"><font size="2">[<a href="http://www.adl.org/main_Anti_Semitism_International/as_survey_2005.htm">Results&nbsp;Sorted By&nbsp;Country</a>]</font></p>
+<p><font size="1"><font size="2">Regarding Poland and Hungary, the two
+countries added to the survey who are now members of the EU, Mr. Foxman
+said, "We are not surprised to find that a high percentage of the
+respondents hold negative views of Jews,&nbsp; given each&nbsp;
+country's&nbsp; history of animus towards Jews.&nbsp;&nbsp; However, we
+are hopeful that, along with their other EU partners, they will take
+the necessary steps to make anti-Semitism unacceptable in their
+societies."</font></font></p>
+<p><font size="1"><font size="2">Barbara B. Balser, ADL National Chair,
+added, "These findings will help guide our deliberations on a European
+and country by country basis, as we continue the effort to combat
+anti-Semitism." We will be working with our European colleagues on a
+variety of initiatives to educate against anti-Semitism."</font></font></p>
+<p><font size="1"><font size="2">The ADL commissioned First
+International Resources to conduct the survey. Fielded in Europe by
+Taylor Nelson Sofres, which conducted a total of 6,000 telephone
+interviews &#8211; 500 in each of the 12 countries in the native language of
+each of the countries -- among the general population between April 11
+&#8211; May 6, 2005. The margin of error for each country is +/-4.5% at 95%
+level of confidence.</font></font></p><br>
+		
+
+		
+		<!-- FOOTER -->
+		<p><i>The
+Anti-Defamation League, founded in 1913, is the world's leading
+organization fighting anti-Semitism through programs and services that
+counteract hatred, prejudice and bigotry.</i></p><br><br>
+		
+		</td>
+		</tr>
+		</tbody></table>
+		<a name="Categories"></a><table valign="top" border="0" cellpadding="5" cellspacing="0" width="95%"><tbody><tr><td bgcolor="#efefef"><span class="bk12b">Additional Press Release Categories</span></td></tr></tbody></table><br><table align="left" cellpadding="0" cellspacing="0" width="100%"><tbody><tr><td valign="top"><ul><li><a href="http://www.adl.org/PresRele/ASaw_14/">Anti-Semitism: Arab</a></li><li><a href="http://www.adl.org/PresRele/ASInt_13/">Anti-Semitism: International</a></li><li><a href="http://www.adl.org/PresRele/ASUS_12/">Anti-Semitism: USA</a></li><li><a href="http://www.adl.org/PresRele/BkJew_21/">Black-Jewish Relations</a></li><li><a href="http://www.adl.org/PresRele/ChJew_31/">Christian-Jewish Relations</a></li><li><a href="http://www.adl.org/PresRele/CvlRt_32/">Civil Rights</a></li><li><a href="http://www.adl.org/PresRele/DiRaB_41/">Discrimination / Racism / Bigotry</a></li><li><a href="http://www.adl.org/PresRele/Education_01/">Education</a></li><li><a href="http://www.adl.org/PresRele/Extremism_72/">Extremism</a></li><li><a href="http://www.adl.org/PresRele/HatCr_51/">Hate Crimes</a></li><li><a href="http://www.adl.org/PresRele/HolNa_52/">Holocaust / Nazis</a></li><li><a href="http://www.adl.org/PresRele/HolocaustDenial_83/">Holocaust Denial</a></li></ul></td><td valign="top"><ul><li><a href="http://www.adl.org/PresRele/Internet_75/">Internet</a></li><li><a href="http://www.adl.org/PresRele/IslEx_61/">Islamic Extremist</a></li><li><a href="http://www.adl.org/PresRele/IslME_62/">Israel / Middle-East</a></li><li><a href="http://www.adl.org/PresRele/Militi_71/">Militias</a></li><li><a href="http://www.adl.org/PresRele/Mise_00/">Miscellaneous</a></li><li><a href="http://www.adl.org/PresRele/NatIsl_81/">Nation of Islam</a></li><li><a href="http://www.adl.org/PresRele/NeoSk_82/">Neo-Nazi / Skinheads</a></li><li><a href="http://www.adl.org/PresRele/RelChStSep_90/">Religious Freedom, Church-State</a></li><li><a href="http://www.adl.org/PresRele/SupremeCourt_33/">Supreme Court</a></li><li><a href="http://www.adl.org/PresRele/Teror_92/">Terrorism: Domestic</a></li><li><a href="http://www.adl.org/PresRele/TerrorismIntl_93/">Terrorism: International</a></li><li><a href="http://www.adl.org/PresRele/UnitedNations_94/">United Nations</a></li><li><a href="http://www.adl.org/PresRele/VaticanJewish_96/">Vatican-Jewish Relations</a></li></ul></td></tr></tbody></table>			
+	</td>
+	</tr>
+	</tbody></table>		
+</td>
+
+<!-- Spacer Gif -->
+<script language="JavaScript" type="text/javascript">
+		<!--
+        if ((navigator.appName == "Netscape") && (navigator.appVersion < "5")){
+		document.write('<td bgcolor="#e1e0a6"><img src="/images/spacer_tr.gif" width="2" height="1" border="0" alt=""></td>');
+		document.close();
+		}
+		// -->
+</script>
+
+<!-- Start Column #3 - Right Column -->
+<td align="center" valign="top" width="175">		
+
+<!-- Start Include -->
+
+
+	<table align="center" border="0" cellpadding="0" cellspacing="0" width="170">
+
+		
+
+		<tbody><tr>
+		<td colspan="2"><img src="4726_13_files/spacer_002.htm" height="7" width="1"></td></tr>
+		<tr>
+		<td colspan="2" class="bk10b"><span class="adl_article_related">ADDITIONAL LINKS</span></td></tr>
+		<tr>
+		<td colspan="2"><img src="4726_13_files/spacer_002.htm" height="4" width="1"></td></tr>
+	
+		<!-- Print Version -->
+		<tr>
+		<td class="bk9" valign="top">&#8226; &nbsp;</td>
+		<td class="bk10" valign="top"><a href='javascript: var newWwin = window.open ("/NR/exeres/E26630B9-76AF-4AEE-BA24-9CAC7211A0EB,0B1623CA-D5A4-465D-A369-DF6E8679CD9E,frameless.htm", "cat_win", "width=700, height=675, toolbar=yes, scrollbars=yes, resizable=no")'>Print This Page</a></td></tr>	
+<tr> 
+<td class="bk9" valign="top">&#8226; &nbsp;</td>
+<td class="bk10" valign="top">
+<a href="javascript:openWindow_for_email(520,380);"><!-- <img height=18 alt="e-mail to friend" vspace=0 src="/icon_email.gif" width=24 align=left border=0>&nbsp; -->E-Mail This to A Friend</a><br><br>
+</td></tr>				
+		<tr>
+		<td colspan="2"><img src="4726_13_files/spacer_002.htm" height="4" width="1"></td></tr>
+		
+		
+
+	<!-- add a link to the Category Nav at the bottom of the page -->
+	<tr>
+	<td class="bk9" valign="top">&#8226; &nbsp;</td>
+	<td class="bk10" valign="top"><a href="#Categories">Additional Press Releases</a></td></tr>
+	<tr>
+	<td colspan="2"><img src="4726_13_files/spacer_002.htm" height="4" width="1"></td></tr>
+
+	
+	
+	
+	
+	<tr>
+	<td colspan="2"><img src="4726_13_files/spacer_002.htm" height="4" width="1"></td></tr>
+	
+				<tr>
+				<td class="bk9" valign="top">&#8226; &nbsp;</td>
+				<td class="bk10" valign="top"><a href="http://www.adl.org/PresRele/ASInt_13/">Recent Anti-Semitism: International Press Releases</a></td></tr>
+				<tr>
+				<td colspan="2"><img src="4726_13_files/spacer_002.htm" height="4" width="1"></td></tr>
+				
+					<tr>
+					<td class="bk9" valign="top">&#8226; &nbsp;</td>
+					<td class="bk10" valign="top"><a href='javascript: var newWwin = window.open ("/PresRele/ASInt_13/Archive.htm", "cat_win", "width=500, height=475, scrollbars=yes, resizable=no")'>Anti-Semitism: International Press Release Archive</a></td></tr>
+					<tr>
+					<td colspan="2"><img src="4726_13_files/spacer_002.htm" height="4" width="1"></td></tr>
+					
+	<!--
+		<tr>
+		<td class="bk9" valign="top">&#149; &nbsp;</td>
+		<td class="bk10" valign="top"><a href="">Create New Press Release</a></td></tr>
+		<tr>
+		<td colspan="2"><img src="/presrele/spacer.gif" height="4" width="1"></td></tr>
+	-->
+		
+	<tr>
+	<td colspan="2"><img src="4726_13_files/spacer_002.htm" height="10" width="1"></td></tr>
+	
+	
+		<!-- display the Edit Console 	-->
+		<tr>
+		<td colspan="2" class="bk10b" align="left"><div id="divWBC" style="border: 1px solid rgb(0, 0, 0); position: absolute; visibility: hidden; z-index: 2;"><table bgcolor="#ffffff" border="0" cellpadding="5" cellspacing="0" width="200"></table></div></td></tr>
+		<tr>
+		<td colspan="2"><img src="4726_13_files/spacer_002.htm" height="4" width="1"></td></tr>
+		
+
+	</tbody></table>
+	
+
+<!-- Contact Info -->
+<!---- press release contact info ----->
+
+
+
+<table align="center" border="0" cellpadding="1" cellspacing="0" width="170">
+<tbody><tr>
+<td class="bk10" bgcolor="#e6e6e6" width="100%">
+
+<table align="center" bgcolor="#ffffff" border="0" cellpadding="4" cellspacing="0" width="168">
+<tbody><tr>
+<td class="bk10b" align="center" width="100%">
+<span class="adl_article_related">Contact Information</span><br>
+</td></tr>
+
+<tr>
+<td align="center" width="100%"><a class="bk10" href="mailto:adlmedia@adl.org">Press Inquiries</a></td>
+</tr>
+</tbody></table>
+
+</td>
+</tr>
+
+<tr>
+<td><img src="4726_13_files/spacer_002.htm" height="13" width="1"></td></tr>
+</tbody></table>
+<!---- END PR Contact Info ---->
+
+<!-- Callout Section -->
+
+<table align="center" border="0" cellpadding="1" cellspacing="0" width="170">
+	<tbody><tr>
+	<td class="bk10" bgcolor="#ffffff" width="100%">
+
+		<table align="center" bgcolor="#ffffff" border="0" cellpadding="4" cellspacing="0" width="168">
+			<tbody><tr>
+			<td class="bk10b" colspan="2" bgcolor="#ffffff" width="100%">
+				<span class="adl_article_related" align="center">RELATED ARTICLES</span>
+			</td></tr>
+			
+			
+				<tr>
+				<td class="adl_Bullet_Small" valign="top">&#8226;</td>
+				<td class="bk10" width="100%">
+					<p><strong><font color="#ff0000">Read The Full Survey!<br></font></strong><a href="http://www.adl.org/anti_semitism/european_attitudes_may_2005.pdf" target="_blank"><em><font size="2">Attitudes Toward Jews in Twelve European Countries</font></em></a>&nbsp;(.pdf)<a href="http://www.adl.org/main_Anti_Semitism_International/as_survey_2005.htm"><br><br>Country-By-Country Results</a></p>
+				</td>
+				</tr>
+			
+				<tr>
+				<td class="adl_Bullet_Small" valign="top">&#8226;</td>
+				<td class="bk10" width="100%">
+					<p><a href="http://www.adl.org/Anti_semitism/anti-semitism_global_incidents_2005.asp">Global Anti-Semitism: Selected Incidents Around the World in 2005</a></p>
+				</td>
+				</tr>
+			
+				<tr>
+				<td class="adl_Bullet_Small" valign="top">&#8226;</td>
+				<td class="bk10" width="100%">
+					<p><strong>Past ADL Surveys in Europe:<br></strong><a href="http://www.adl.org/PresRele/ASInt_13/4483_13.htm"><font color="#36495d">ADL Survey Finds Some Decrease In Anti-Semitic Attitudes In Ten European Countries</font></a>&nbsp;(4/26/04)</p>
+<p><a href="http://www.adl.org/PresRele/ASInt_13/4185_13.asp"><font color="#163d6a">ADL Survey of Five European Countries Finds One in Five Hold Strong Anti-Semitic Sentiments</font></a>&nbsp;(10/31/02)</p>
+<p><a href="http://www.adl.org/PresRele/ASInt_13/4118_13.asp"><font color="#36495d">ADL European Survey Findings: "A Potent and Dangerous Mix"</font></a>&nbsp;(6/27/02)</p>
+				</td>
+				</tr>
+			
+				<tr>
+				<td class="adl_Bullet_Small" valign="top">&#8226;</td>
+				<td class="bk10" width="100%">
+					<strong>ADL And OSCE:<br></strong><a href="http://www.adl.org/main_International_Affairs/osce_cordoba_1.htm">The Cordoba Conference</a>
+				</td>
+				</tr>
+			
+
+		</tbody></table>
+	</td>
+	</tr>
+</tbody></table>
+
+<!-- End Callout Section -->
+
+
+<!-- Side Bar Image -->
+<table align="center" border="0" cellpadding="0" cellspacing="0" width="170">
+<tbody><tr>
+<td colspan="2"><img src="4726_13_files/spacer_002.htm" height="14" width="1"></td></tr>
+<tr>
+<td colspan="2">
+	
+</td>
+</tr>
+<tr>
+<td colspan="2"><img src="4726_13_files/spacer_002.htm" height="14" width="1"></td></tr>
+
+</tbody></table>
+<!-- End Side Bar Image -->
+
+<!-- End Include -->
+
+</td>
+		
+<!-- Spacer Gif -->
+<script language="JavaScript" type="text/javascript">
+		<!--
+		if ((navigator.appName == "Netscape") && (navigator.appVersion < "5")){
+		document.write('<td bgcolor="#e1e0a6"><img src="/images/spacer_tr.gif" width="2" height="1" border="0" alt=""></td>');
+		document.close();
+		}
+        // -->
+</script>
+</tr>
+</tbody></table>
+
+<!-- Start Table #3 - Bottom Table -->
+
+<table border="0" cellpadding="0" cellspacing="0" width="750">
+<tbody><tr> 
+<td bgcolor="#ffffff"><img src="4726_13_files/spacer.htm" height="1" width="1"></td>
+</tr>
+  
+  
+<tr> 
+<td bgcolor="#ffffff">&nbsp;</td>
+</tr>
+
+
+
+<tr> 
+<td class="bk10" align="center"> 
+<a target="_top" href="http://www.adl.org/default.asp">Home </a>| 
+<a target="_top" href="http://www.adl.org/search/query.asp">Search</a> | 
+<a target="_top" href="http://www.adl.org/main_about_adl.asp">About ADL</a> | 
+<a target="_top" href="http://www.adl.org/main_contact.asp">Contact ADL</a> |
+<a href="http://www.adl.org/privacy.html" target="_top">Privacy Policy</a>
+</td>
+</tr>
+</tbody></table>
+
+
+
+</td>
+</tr>
+</tbody></table>
+
+
+
+</font><p class="bk10b" align="center"><font face="Arial, Helvetica, sans-serif" size="2">© 2005 Anti-Defamation League</font></p>
+<font face="Arial, Helvetica, sans-serif" size="2">	<!-- START OF SmartSource Data Collector TAG -->
+
+<!-- Copyright 2002 NetIQ Corporation -->
+
+<!-- V6.0a -->
+
+<!-- $DateTime: 2003/03/17 09:53:25 $ -->
+
+<!-- $Revision: #20 $ -->
+
+<script language="Javascript"><!--
+
+gVersion="1.0";
+
+//-->
+
+</script>
+
+<script language="Javascript1.1"><!--
+
+gVersion="1.1";
+
+//-->
+
+</script>
+
+<script language="Javascript1.2"><!--
+
+gVersion="1.2";
+
+//-->
+
+</script>
+
+<script language="Javascript1.3"><!--
+
+gVersion="1.3";
+
+//-->
+
+</script>
+
+<script language="Javascript1.4"><!--
+
+gVersion="1.4";
+
+//-->
+
+</script>
+
+<script language="Javascript1.5"><!--
+
+gVersion="1.5";
+
+//-->
+
+</script>
+
+<script language="JavaScript">
+
+<!--
+
+var gImages=new Array;
+
+var gIndex=0;
+
+var DCS=new Object();
+
+var WT=new Object();
+
+var DCSext=new Object();
+
+var gDomain="65.121.229.90";
+
+var gDcsId="";
+
+if (gDcsId==""){
+
+        var gTagPath=gDomain;
+
+}
+
+else{
+
+        var gTagPath=gDomain+"/"+gDcsId;
+
+}
+
+// (c) 1999-2003 NetIQ Corporation. All rights reserved.
+
+// $DateTime: 2003/09/30 11:23:29 $
+
+// $Revision: #3 $
+
+function dcsMultiTrack(){
+
+        for (var i=0;i<arguments.length;i++){
+
+                if (arguments[i].indexOf('WT.')==0){
+
+                                WT[arguments[i].substring(3)]=arguments[i+1];
+
+                                i++;
+
+                }
+
+                if (arguments[i].indexOf('DCS.')==0){
+
+                                DCS[arguments[i].substring(4)]=arguments[i+1];
+
+                                i++;
+
+                }
+
+                if (arguments[i].indexOf('DCSext.')==0){
+
+                                DCSext[arguments[i].substring(7)]=arguments[i+1];
+
+                                i++;
+
+                }
+
+        }
+
+        var dCurrent=new Date();
+
+        DCS.dcsdat=dCurrent.getTime();
+
+        dcsTag();
+
+}
+
+function dcsVar(){
+
+        var dCurrent=new Date();
+
+        WT.tz=dCurrent.getTimezoneOffset()/60*-1;
+
+        WT.bh=dCurrent.getHours();
+
+        WT.ul=navigator.appName=="Netscape"?navigator.language:navigator.userLanguage;
+
+        if (typeof(screen)=="object"){
+
+                WT.cd=screen.colorDepth;
+
+                WT.sr=screen.width+"x"+screen.height;
+
+        }
+
+        if (typeof(navigator.javaEnabled())=="boolean"){
+
+                WT.jo=navigator.javaEnabled()?"Yes":"No";
+
+        }
+
+        WT.ti=document.title;
+
+        WT.js="Yes";
+
+        if (typeof(gVersion)!="undefined"){
+
+                WT.jv=gVersion;
+
+        }
+
+        WT.sp="";
+
+        DCS.dcsuri=window.location.pathname;
+
+        DCS.dcsqry=window.location.search;
+
+        if ((window.document.referrer!="")&&(window.document.referrer!="-")){
+
+                if (!(navigator.appName=="Microsoft Internet Explorer"&&parseInt(navigator.appVersion)<4)){
+
+                        DCS.dcsref=window.document.referrer;
+
+                }
+
+        }
+
+        DCS.dcssip=window.location.hostname;
+
+        DCS.dcsdat=dCurrent.getTime();
+
+}
+
+function A(N,V){
+
+        return "&"+N+"="+escape(V);
+
+}
+
+function dcsCreateImage(dcsSrc){
+
+        if (document.images){
+
+                gImages[gIndex]=new Image;
+
+                gImages[gIndex].src=dcsSrc;
+
+                gIndex++;
+
+        }
+
+        else{
+
+                document.write('<IMG BORDER="0" NAME="DCSIMG" WIDTH="1" HEIGHT="1" SRC="'+dcsSrc+'">');
+
+        }
+
+}
+
+function dcsMeta(){
+
+        var myDocumentElements;
+
+        if (document.all){
+
+                myDocumentElements=document.all.tags("meta");
+
+        }
+
+        else if (document.documentElement){
+
+                myDocumentElements=document.getElementsByTagName("meta");
+
+        }
+
+        if (typeof(myDocumentElements)!="undefined"){
+
+                for (var i=1;i<=myDocumentElements.length;i++){
+
+                        myMeta=myDocumentElements.item(i-1);
+
+                        if (myMeta.name){
+
+                                if (myMeta.name.indexOf('WT.')==0){
+
+                                        WT[myMeta.name.substring(3)]=myMeta.content;
+
+                                }
+
+                                else if (myMeta.name.indexOf('DCSext.')==0){
+
+                                        DCSext[myMeta.name.substring(7)]=myMeta.content;
+
+                                }
+
+                                else if (myMeta.name.indexOf('DCS.')==0){
+
+                                        DCS[myMeta.name.substring(4)]=myMeta.content;
+
+                                }
+
+                        }
+
+                }
+
+        }
+
+}
+
+function dcsTag(TagImage){
+
+        var P="http"+(window.location.protocol.indexOf('https:')==0?'s':'')+"://"+TagImage+"/dcs.gif?";
+
+        for (N in DCS){
+
+                if (DCS[N]) {
+
+                        P+=A(N,DCS[N]);
+
+                }
+
+        }
+
+        for (N in WT){
+
+                if (WT[N]) {
+
+                        P+=A("WT."+N,WT[N]);
+
+                }
+
+        }
+
+        for (N in DCSext){
+
+                if (DCSext[N]) {
+
+                        P+=A(N,DCSext[N]);
+
+                }
+
+        }
+
+        if (P.length>2048&&navigator.userAgent.indexOf('MSIE')>=0){
+
+                P=P.substring(0,2040)+"&WT.tu=1";
+
+        }
+
+        dcsCreateImage(P);
+
+}
+
+dcsVar();
+
+dcsMeta();
+
+dcsTag(gTagPath);
+
+//-->
+
+</script>
+
+<noscript>
+
+<IMG BORDER="0" NAME="DCSIMG" WIDTH="1" HEIGHT="1" SRC="http://65.121.229.90/njs.gif?dcsuri=/nojavascript&WT.js=No">
+
+</noscript>
+
+
+
+<!-- Inserted by Content Management Server: BEGIN EmbedBodyEndHook -->
+
+<!-- Inserted by Content Management Server: END EmbedBodyEndHook -->
+</font><div style="position: absolute; background-color: rgb(255, 255, 255); width: 138px; height: 369px; font-family: Verdana,Arial,Helvetica,sans-serif; font-weight: bold; font-style: normal; font-size: 10px; z-index: 101; visibility: visible; top: 170px; left: 0pt;"><div style="position: absolute; visibility: inherit; overflow: hidden; cursor: default; color: rgb(255, 255, 255); background-color: rgb(43, 112, 153); text-align: left; width: 133px; height: 19px; padding-left: 5px; padding-top: 5px; left: 0pt; top: 0pt;">ANTI-SEMITISM<img src="4726_13_files/spacer.gif" style="position: absolute; width: 1px; height: 1px; top: 11.5px; left: 135px;"></div><div style="position: absolute; visibility: inherit; overflow: hidden; cursor: default; color: rgb(255, 255, 255); background-color: rgb(43, 112, 153); text-align: left; width: 133px; height: 19px; padding-left: 5px; padding-top: 5px; left: 0pt; top: 24px;">CIVIL RIGHTS<img src="4726_13_files/spacer.gif" style="position: absolute; width: 1px; height: 1px; top: 11.5px; left: 135px;"></div><div style="position: absolute; visibility: inherit; overflow: hidden; cursor: default; color: rgb(255, 255, 255); background-color: rgb(43, 112, 153); text-align: left; width: 133px; height: 19px; padding-left: 5px; padding-top: 5px; left: 0pt; top: 48px;">COMBATING HATE<img src="4726_13_files/spacer.gif" style="position: absolute; width: 1px; height: 1px; top: 11.5px; left: 135px;"></div><div style="position: absolute; visibility: inherit; overflow: hidden; cursor: default; color: rgb(255, 255, 255); background-color: rgb(43, 112, 153); text-align: left; width: 133px; height: 19px; padding-left: 5px; padding-top: 5px; left: 0pt; top: 72px;">EDUCATION<img src="4726_13_files/spacer.gif" style="position: absolute; width: 1px; height: 1px; top: 11.5px; left: 135px;"></div><div style="position: absolute; visibility: inherit; overflow: hidden; cursor: default; color: rgb(255, 255, 255); background-color: rgb(43, 112, 153); text-align: left; width: 133px; height: 19px; padding-left: 5px; padding-top: 5px; left: 0pt; top: 96px;">EXTREMISM<img src="4726_13_files/spacer.gif" style="position: absolute; width: 1px; height: 1px; top: 11.5px; left: 135px;"></div><div style="position: absolute; visibility: inherit; overflow: hidden; cursor: default; color: rgb(255, 255, 255); background-color: rgb(43, 112, 153); text-align: left; width: 133px; height: 19px; padding-left: 5px; padding-top: 5px; left: 0pt; top: 120px;">HOLOCAUST<img src="4726_13_files/spacer.gif" style="position: absolute; width: 1px; height: 1px; top: 11.5px; left: 135px;"></div><div style="position: absolute; visibility: inherit; overflow: hidden; cursor: default; color: rgb(255, 255, 255); background-color: rgb(43, 112, 153); text-align: left; width: 133px; height: 19px; padding-left: 5px; padding-top: 5px; left: 0pt; top: 144px;">INTERFAITH</div><div style="position: absolute; visibility: inherit; overflow: hidden; cursor: default; color: rgb(255, 255, 255); background-color: rgb(43, 112, 153); text-align: left; width: 133px; height: 30px; padding-left: 5px; padding-top: 5px; left: 0pt; top: 168px;">INTERNATIONAL AFFAIRS<img src="4726_13_files/spacer.gif" style="position: absolute; width: 1px; height: 1px; top: 17px; left: 135px;"></div><div style="position: absolute; visibility: inherit; overflow: hidden; cursor: default; color: rgb(255, 255, 255); background-color: rgb(43, 112, 153); text-align: left; width: 133px; height: 19px; padding-left: 5px; padding-top: 5px; left: 0pt; top: 203px;">INTERNET RUMORS</div><div style="position: absolute; visibility: inherit; overflow: hidden; cursor: default; color: rgb(255, 255, 255); background-color: rgb(43, 112, 153); text-align: left; width: 133px; height: 19px; padding-left: 5px; padding-top: 5px; left: 0pt; top: 227px;">ISRAEL<img src="4726_13_files/spacer.gif" style="position: absolute; width: 1px; height: 1px; top: 11.5px; left: 135px;"></div><div style="position: absolute; visibility: inherit; overflow: hidden; cursor: default; color: rgb(255, 255, 255); background-color: rgb(43, 112, 153); text-align: left; width: 133px; height: 30px; padding-left: 5px; padding-top: 5px; left: 0pt; top: 251px;">LAW ENFORCEMENT (L.E.A.R.N.)<img src="4726_13_files/spacer.gif" style="position: absolute; width: 1px; height: 1px; top: 17px; left: 135px;"></div><div style="position: absolute; visibility: inherit; overflow: hidden; cursor: default; color: rgb(255, 255, 255); background-color: rgb(43, 112, 153); text-align: left; width: 133px; height: 19px; padding-left: 5px; padding-top: 5px; left: 0pt; top: 286px;">RELIGIOUS FREEDOM<img src="4726_13_files/spacer.gif" style="position: absolute; width: 1px; height: 1px; top: 11.5px; left: 135px;"></div><div style="position: absolute; visibility: inherit; overflow: hidden; cursor: default; color: rgb(255, 255, 255); background-color: rgb(43, 112, 153); text-align: left; width: 133px; height: 30px; padding-left: 5px; padding-top: 5px; left: 0pt; top: 310px;">SECURITY AWARENESS</div><div style="position: absolute; visibility: inherit; overflow: hidden; cursor: default; color: rgb(255, 255, 255); background-color: rgb(43, 112, 153); text-align: left; width: 133px; height: 19px; padding-left: 5px; padding-top: 5px; left: 0pt; top: 345px;">TERRORISM<img src="4726_13_files/spacer.gif" style="position: absolute; width: 1px; height: 1px; top: 11.5px; left: 135px;"></div></div><div style="position: absolute; background-color: rgb(255, 255, 255); width: 180px; height: 54px; font-family: Verdana,Arial,Helvetica,sans-serif; font-weight: bold; font-style: normal; font-size: 10px; z-index: 102; visibility: hidden; top: 0pt; left: 0pt;"><div style="position: absolute; visibility: inherit; overflow: hidden; cursor: default; color: rgb(0, 34, 68); background-color: rgb(206, 206, 206); text-align: left; width: 175px; height: 13px; padding-left: 5px; padding-top: 5px; left: 0pt; top: 0pt;">International</div><div style="position: absolute; visibility: inherit; overflow: hidden; cursor: default; color: rgb(0, 34, 68); background-color: rgb(206, 206, 206); text-align: left; width: 175px; height: 13px; padding-left: 5px; padding-top: 5px; left: 0pt; top: 18px;">Arab World</div><div style="position: absolute; visibility: inherit; overflow: hidden; cursor: default; color: rgb(0, 34, 68); background-color: rgb(206, 206, 206); text-align: left; width: 175px; height: 13px; padding-left: 5px; padding-top: 5px; left: 0pt; top: 36px;">United States</div></div><div style="position: absolute; background-color: rgb(255, 255, 255); width: 180px; height: 36px; font-family: Verdana,Arial,Helvetica,sans-serif; font-weight: bold; font-style: normal; font-size: 10px; z-index: 102; visibility: hidden; top: 0pt; left: 0pt;"><div style="position: absolute; visibility: inherit; overflow: hidden; cursor: default; color: rgb(0, 34, 68); background-color: rgb(206, 206, 206); text-align: left; width: 175px; height: 13px; padding-left: 5px; padding-top: 5px; left: 0pt; top: 0pt;">Civil Rights Front Page</div><div style="position: absolute; visibility: inherit; overflow: hidden; cursor: default; color: rgb(0, 34, 68); background-color: rgb(206, 206, 206); text-align: left; width: 175px; height: 13px; padding-left: 5px; padding-top: 5px; left: 0pt; top: 18px;">ADL Friend of Court Briefs</div></div><div style="position: absolute; background-color: rgb(255, 255, 255); width: 180px; height: 54px; font-family: Verdana,Arial,Helvetica,sans-serif; font-weight: bold; font-style: normal; font-size: 10px; z-index: 102; visibility: hidden; top: 0pt; left: 0pt;"><div style="position: absolute; visibility: inherit; overflow: hidden; cursor: default; color: rgb(0, 34, 68); background-color: rgb(206, 206, 206); text-align: left; width: 175px; height: 13px; padding-left: 5px; padding-top: 5px; left: 0pt; top: 0pt;">Combating Hate Front Page</div><div style="position: absolute; visibility: inherit; overflow: hidden; cursor: default; color: rgb(0, 34, 68); background-color: rgb(206, 206, 206); text-align: left; width: 175px; height: 13px; padding-left: 5px; padding-top: 5px; left: 0pt; top: 18px;">Hate Crimes Laws</div><div style="position: absolute; visibility: inherit; overflow: hidden; cursor: default; color: rgb(0, 34, 68); background-color: rgb(206, 206, 206); text-align: left; width: 175px; height: 13px; padding-left: 5px; padding-top: 5px; left: 0pt; top: 36px;">Hate Symbols Database</div></div><div style="position: absolute; background-color: rgb(255, 255, 255); width: 200px; height: 162px; font-family: Verdana,Arial,Helvetica,sans-serif; font-weight: bold; font-style: normal; font-size: 10px; z-index: 102; visibility: hidden; top: 0pt; left: 0pt;"><div style="position: absolute; visibility: inherit; overflow: hidden; cursor: default; color: rgb(0, 34, 68); background-color: rgb(206, 206, 206); text-align: left; width: 195px; height: 13px; padding-left: 5px; padding-top: 5px; left: 0pt; top: 0pt;">Education Front Page</div><div style="position: absolute; visibility: inherit; overflow: hidden; cursor: default; color: rgb(0, 34, 68); background-color: rgb(206, 206, 206); text-align: left; width: 195px; height: 13px; padding-left: 5px; padding-top: 5px; left: 0pt; top: 18px;">A WORLD OF DIFFERENCE®</div><div style="position: absolute; visibility: inherit; overflow: hidden; cursor: default; color: rgb(0, 34, 68); background-color: rgb(206, 206, 206); text-align: left; width: 195px; height: 13px; padding-left: 5px; padding-top: 5px; left: 0pt; top: 36px;">Miller Early Childhood Initiative</div><div style="position: absolute; visibility: inherit; overflow: hidden; cursor: default; color: rgb(0, 34, 68); background-color: rgb(206, 206, 206); text-align: left; width: 195px; height: 13px; padding-left: 5px; padding-top: 5px; left: 0pt; top: 54px;">Campus/Higher Education</div><div style="position: absolute; visibility: inherit; overflow: hidden; cursor: default; color: rgb(0, 34, 68); background-color: rgb(206, 206, 206); text-align: left; width: 195px; height: 13px; padding-left: 5px; padding-top: 5px; left: 0pt; top: 72px;">Children's Bibliography</div><div style="position: absolute; visibility: inherit; overflow: hidden; cursor: default; color: rgb(0, 34, 68); background-color: rgb(206, 206, 206); text-align: left; width: 195px; height: 13px; padding-left: 5px; padding-top: 5px; left: 0pt; top: 90px;">Curriculum Connections</div><div style="position: absolute; visibility: inherit; overflow: hidden; cursor: default; color: rgb(0, 34, 68); background-color: rgb(206, 206, 206); text-align: left; width: 195px; height: 13px; padding-left: 5px; padding-top: 5px; left: 0pt; top: 108px;">Combating Anti-Semitism </div><div style="position: absolute; visibility: inherit; overflow: hidden; cursor: default; color: rgb(0, 34, 68); background-color: rgb(206, 206, 206); text-align: left; width: 195px; height: 13px; padding-left: 5px; padding-top: 5px; left: 0pt; top: 126px;">Education Advocacy</div><div style="position: absolute; visibility: inherit; overflow: hidden; cursor: default; color: rgb(0, 34, 68); background-color: rgb(206, 206, 206); text-align: left; width: 195px; height: 13px; padding-left: 5px; padding-top: 5px; left: 0pt; top: 144px;">Special Campaigns/Initiatives</div></div><div style="position: absolute; background-color: rgb(255, 255, 255); width: 180px; height: 90px; font-family: Verdana,Arial,Helvetica,sans-serif; font-weight: bold; font-style: normal; font-size: 10px; z-index: 102; visibility: hidden; top: 0pt; left: 0pt;"><div style="position: absolute; visibility: inherit; overflow: hidden; cursor: default; color: rgb(0, 34, 68); background-color: rgb(206, 206, 206); text-align: left; width: 175px; height: 13px; padding-left: 5px; padding-top: 5px; left: 0pt; top: 0pt;">Extremism Front Page</div><div style="position: absolute; visibility: inherit; overflow: hidden; cursor: default; color: rgb(0, 34, 68); background-color: rgb(206, 206, 206); text-align: left; width: 175px; height: 13px; padding-left: 5px; padding-top: 5px; left: 0pt; top: 18px;">Extremism in America</div><div style="position: absolute; visibility: inherit; overflow: hidden; cursor: default; color: rgb(0, 34, 68); background-color: rgb(206, 206, 206); text-align: left; width: 175px; height: 13px; padding-left: 5px; padding-top: 5px; left: 0pt; top: 36px;">Nation of Islam</div><div style="position: absolute; visibility: inherit; overflow: hidden; cursor: default; color: rgb(0, 34, 68); background-color: rgb(206, 206, 206); text-align: left; width: 175px; height: 13px; padding-left: 5px; padding-top: 5px; left: 0pt; top: 54px;">Terrorism Update</div><div style="position: absolute; visibility: inherit; overflow: hidden; cursor: default; color: rgb(0, 34, 68); background-color: rgb(206, 206, 206); text-align: left; width: 175px; height: 13px; padding-left: 5px; padding-top: 5px; left: 0pt; top: 72px;">Upcoming Extremist Events</div></div><div style="position: absolute; background-color: rgb(255, 255, 255); width: 200px; height: 72px; font-family: Verdana,Arial,Helvetica,sans-serif; font-weight: bold; font-style: normal; font-size: 10px; z-index: 102; visibility: hidden; top: 0pt; left: 0pt;"><div style="position: absolute; visibility: inherit; overflow: hidden; cursor: default; color: rgb(0, 34, 68); background-color: rgb(206, 206, 206); text-align: left; width: 195px; height: 13px; padding-left: 5px; padding-top: 5px; left: 0pt; top: 0pt;">Holocaust Front Page</div><div style="position: absolute; visibility: inherit; overflow: hidden; cursor: default; color: rgb(0, 34, 68); background-color: rgb(206, 206, 206); text-align: left; width: 195px; height: 13px; padding-left: 5px; padding-top: 5px; left: 0pt; top: 18px;">Holocaust Education Front Page</div><div style="position: absolute; visibility: inherit; overflow: hidden; cursor: default; color: rgb(0, 34, 68); background-color: rgb(206, 206, 206); text-align: left; width: 195px; height: 13px; padding-left: 5px; padding-top: 5px; left: 0pt; top: 36px;">Echoes and Reflections</div><div style="position: absolute; visibility: inherit; overflow: hidden; cursor: default; color: rgb(0, 34, 68); background-color: rgb(206, 206, 206); text-align: left; width: 195px; height: 13px; padding-left: 5px; padding-top: 5px; left: 0pt; top: 54px;">Dimensions: Holocaust Studies</div></div><div style="position: absolute; background-color: rgb(255, 255, 255); width: 200px; height: 36px; font-family: Verdana,Arial,Helvetica,sans-serif; font-weight: bold; font-style: normal; font-size: 10px; z-index: 102; visibility: hidden; top: 0pt; left: 0pt;"><div style="position: absolute; visibility: inherit; overflow: hidden; cursor: default; color: rgb(0, 34, 68); background-color: rgb(206, 206, 206); text-align: left; width: 195px; height: 13px; padding-left: 5px; padding-top: 5px; left: 0pt; top: 0pt;">International Affairs Home Page</div><div style="position: absolute; visibility: inherit; overflow: hidden; cursor: default; color: rgb(0, 34, 68); background-color: rgb(206, 206, 206); text-align: left; width: 195px; height: 13px; padding-left: 5px; padding-top: 5px; left: 0pt; top: 18px;">ADL and OSCE</div></div><div style="position: absolute; background-color: rgb(255, 255, 255); width: 180px; height: 90px; font-family: Verdana,Arial,Helvetica,sans-serif; font-weight: bold; font-style: normal; font-size: 10px; z-index: 102; visibility: hidden; top: 0pt; left: 0pt;"><div style="position: absolute; visibility: inherit; overflow: hidden; cursor: default; color: rgb(0, 34, 68); background-color: rgb(206, 206, 206); text-align: left; width: 175px; height: 13px; padding-left: 5px; padding-top: 5px; left: 0pt; top: 0pt;">Israel Front Page </div><div style="position: absolute; visibility: inherit; overflow: hidden; cursor: default; color: rgb(0, 34, 68); background-color: rgb(206, 206, 206); text-align: left; width: 175px; height: 13px; padding-left: 5px; padding-top: 5px; left: 0pt; top: 18px;">Advocating for Israel</div><div style="position: absolute; visibility: inherit; overflow: hidden; cursor: default; color: rgb(0, 34, 68); background-color: rgb(206, 206, 206); text-align: left; width: 175px; height: 13px; padding-left: 5px; padding-top: 5px; left: 0pt; top: 36px;">Chronology of Terror Attacks</div><div style="position: absolute; visibility: inherit; overflow: hidden; cursor: default; color: rgb(0, 34, 68); background-color: rgb(206, 206, 206); text-align: left; width: 175px; height: 13px; padding-left: 5px; padding-top: 5px; left: 0pt; top: 54px;">Anti-Israel Protest Calendar</div><div style="position: absolute; visibility: inherit; overflow: hidden; cursor: default; color: rgb(0, 34, 68); background-color: rgb(206, 206, 206); text-align: left; width: 175px; height: 13px; padding-left: 5px; padding-top: 5px; left: 0pt; top: 72px;">ADL Israel Office</div></div><div style="position: absolute; background-color: rgb(255, 255, 255); width: 180px; height: 108px; font-family: Verdana,Arial,Helvetica,sans-serif; font-weight: bold; font-style: normal; font-size: 10px; z-index: 102; visibility: hidden; top: 0pt; left: 0pt;"><div style="position: absolute; visibility: inherit; overflow: hidden; cursor: default; color: rgb(0, 34, 68); background-color: rgb(206, 206, 206); text-align: left; width: 175px; height: 13px; padding-left: 5px; padding-top: 5px; left: 0pt; top: 0pt;">L.E.A.R.N. Front Page </div><div style="position: absolute; visibility: inherit; overflow: hidden; cursor: default; color: rgb(0, 34, 68); background-color: rgb(206, 206, 206); text-align: left; width: 175px; height: 13px; padding-left: 5px; padding-top: 5px; left: 0pt; top: 18px;">Law Enforcement Training</div><div style="position: absolute; visibility: inherit; overflow: hidden; cursor: default; color: rgb(0, 34, 68); background-color: rgb(206, 206, 206); text-align: left; width: 175px; height: 13px; padding-left: 5px; padding-top: 5px; left: 0pt; top: 36px;">Extremism in the News</div><div style="position: absolute; visibility: inherit; overflow: hidden; cursor: default; color: rgb(0, 34, 68); background-color: rgb(206, 206, 206); text-align: left; width: 175px; height: 13px; padding-left: 5px; padding-top: 5px; left: 0pt; top: 54px;">Upcoming Extremist Events</div><div style="position: absolute; visibility: inherit; overflow: hidden; cursor: default; color: rgb(0, 34, 68); background-color: rgb(206, 206, 206); text-align: left; width: 175px; height: 13px; padding-left: 5px; padding-top: 5px; left: 0pt; top: 72px;">Extremism in America</div><div style="position: absolute; visibility: inherit; overflow: hidden; cursor: default; color: rgb(0, 34, 68); background-color: rgb(206, 206, 206); text-align: left; width: 175px; height: 13px; padding-left: 5px; padding-top: 5px; left: 0pt; top: 90px;">Officer Safety Information</div></div><div style="position: absolute; background-color: rgb(255, 255, 255); width: 190px; height: 90px; font-family: Verdana,Arial,Helvetica,sans-serif; font-weight: bold; font-style: normal; font-size: 10px; z-index: 102; visibility: hidden; top: 0pt; left: 0pt;"><div style="position: absolute; visibility: inherit; overflow: hidden; cursor: default; color: rgb(0, 34, 68); background-color: rgb(206, 206, 206); text-align: left; width: 185px; height: 13px; padding-left: 5px; padding-top: 5px; left: 0pt; top: 0pt;">Religious Freedom Front Page </div><div style="position: absolute; visibility: inherit; overflow: hidden; cursor: default; color: rgb(0, 34, 68); background-color: rgb(206, 206, 206); text-align: left; width: 185px; height: 13px; padding-left: 5px; padding-top: 5px; left: 0pt; top: 18px;">Workplace and Religion</div><div style="position: absolute; visibility: inherit; overflow: hidden; cursor: default; color: rgb(0, 34, 68); background-color: rgb(206, 206, 206); text-align: left; width: 185px; height: 13px; padding-left: 5px; padding-top: 5px; left: 0pt; top: 36px;">Religious Holidays in Classrooms</div><div style="position: absolute; visibility: inherit; overflow: hidden; cursor: default; color: rgb(0, 34, 68); background-color: rgb(206, 206, 206); text-align: left; width: 185px; height: 13px; padding-left: 5px; padding-top: 5px; left: 0pt; top: 54px;">Creationism</div><div style="position: absolute; visibility: inherit; overflow: hidden; cursor: default; color: rgb(0, 34, 68); background-color: rgb(206, 206, 206); text-align: left; width: 185px; height: 13px; padding-left: 5px; padding-top: 5px; left: 0pt; top: 72px;">The Ten Commandments</div></div><div style="position: absolute; background-color: rgb(255, 255, 255); width: 200px; height: 72px; font-family: Verdana,Arial,Helvetica,sans-serif; font-weight: bold; font-style: normal; font-size: 10px; z-index: 102; visibility: hidden; top: 0pt; left: 0pt;"><div style="position: absolute; visibility: inherit; overflow: hidden; cursor: default; color: rgb(0, 34, 68); background-color: rgb(206, 206, 206); text-align: left; width: 195px; height: 13px; padding-left: 5px; padding-top: 5px; left: 0pt; top: 0pt;">Terrorism Front Page </div><div style="position: absolute; visibility: inherit; overflow: hidden; cursor: default; color: rgb(0, 34, 68); background-color: rgb(206, 206, 206); text-align: left; width: 195px; height: 13px; padding-left: 5px; padding-top: 5px; left: 0pt; top: 18px;">International Terrorist Symbols</div><div style="position: absolute; visibility: inherit; overflow: hidden; cursor: default; color: rgb(0, 34, 68); background-color: rgb(206, 206, 206); text-align: left; width: 195px; height: 13px; padding-left: 5px; padding-top: 5px; left: 0pt; top: 36px;">Domestic Terrorism</div><div style="position: absolute; visibility: inherit; overflow: hidden; cursor: default; color: rgb(0, 34, 68); background-color: rgb(206, 206, 206); text-align: left; width: 195px; height: 13px; padding-left: 5px; padding-top: 5px; left: 0pt; top: 54px;">Terrorism Update Archive</div></div></body></html>

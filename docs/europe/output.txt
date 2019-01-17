@@ -1,0 +1,41 @@
+<state id="range">
+	<data>0 - 10</data>
+	<color>8c7e7e</color>
+</state>
+<state id="range">
+	<data>10 - 20</data>
+	<color>997a7a</color>
+</state>
+<state id="range">
+	<data>20 - 30</data>
+	<color>a67474</color>
+</state>
+<state id="range">
+	<data>30 - 40</data>
+	<color>b36b6b</color>
+</state>
+<state id="range">
+	<data>40 - 50</data>
+	<color>bf6060</color>
+</state>
+<state id="range">
+	<data>50 - 60</data>
+	<color>cc5252</color>
+</state>
+<state id="range">
+	<data>60 - 70</data>
+	<color>d94141</color>
+</state>
+<state id="range">
+	<data>70 - 80</data>
+	<color>e62e2e</color>
+</state>
+<state id="range">
+	<data>80 - 90</data>
+	<color>f21818</color>
+</state>
+<state id="range">
+	<data>90 - 100</data>
+	<color>ff0000</color>
+</state>
+press any key

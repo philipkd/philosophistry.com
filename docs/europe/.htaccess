@@ -1,0 +1,6 @@
+RewriteEngine On
+# RewriteBase /
+RewriteRule ^question_(.*)\.html index.php?question=$1
+# RewriteRule ^([ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890]+)_(.*) index.php?symbol=$1
+# RewriteRule ^.*_(.*) index.php?symbol=WWGU
+# RewriteRule ^([ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890]+)_(.*) index.php?symbol=WWGU
