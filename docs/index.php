@@ -59,7 +59,7 @@
 
 	    echo count($GLOBALS['essays']);
 
-	    echo " Micro-essays</a><br/> by <a href='http://philipkd.com/'>Philip Dhingra</a><br/>\n";
+	    echo " Entries</a><br/> by <a href='http://philipkd.com/'>Philip Dhingra</a><br/>\n";
 
 	    $tags = array_keys($GLOBALS['tag_to_essays']);
 	    usort($tags, "tag_count_sort");
@@ -234,9 +234,9 @@
 	function print_about() {
 		echo <<<EOT
 		
-		<h2>Philosophistry: The Love of Rhetoric</h2>
+		<h2></h2>
 
-<div class="note-body"><p><i>Philosophistry</i> is a collection of <a href="http://philipkd.com/">Philip Dhingra</a>’s musings on everything including futurism, evolution, psychology, philosophy, and self-improvement. You can view my <a href="https://medium.com/philosophistry">complete essays on Medium</a>, or you can browse my scratchpad on the site you are reading now. Below is a wiki, and to the left are micro-essays. (<a href="/archives">est. 2003</a>)</p></div>
+<div class="note-body"><p>You can view <a href="https://medium.com/philosophistry">complete essays on Medium</a>, or you can browse the scratchpad on the site you are reading now.</p></div>
 
 EOT;
 	}
@@ -270,7 +270,7 @@ EOT;
 	}
 
 	function print_wiki() {
-
+		echo "<h2>Wiki</h2>";
 		echo wiki_markdown(file_get_contents($GLOBALS['content_dir'] . "/Wiki/index.txt"));
 
 	}
@@ -380,11 +380,12 @@ EOT;
 
  		print_about();
 
+		print_tag("_new");
+
  		print_wiki();
 
 		// hr_tag();
 
-		print_tag("_new");
 
  	// 	print_medium_plug();
 
