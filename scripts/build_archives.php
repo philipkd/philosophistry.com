@@ -1,6 +1,6 @@
 <?php
 
-$archive_path = dirname(__FILE) . "/../archives";
+$archive_path = dirname(__FILE__) . "/../content/archives";
 
 $build_path = dirname(__FILE__) . "/../docs/archives";
 
