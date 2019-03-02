@@ -48,8 +48,10 @@
 	function print_nav_tags($tags) {
 	    foreach ($tags as $tag) {
 	    	$count = count($GLOBALS['tag_to_essays'][$tag]);
-	    	$newtag = $GLOBALS['tag_to_new'][$tag] ? $GLOBALS['new_icon'] : "";
-		    echo "<img src=\"/images/icons/tag.png\"> <a href=\"/db/$tag\">" . strtolower(tag_name_sub($tag)) . "</a> ($count) $newtag<br/>\n";
+	    	$should_bold = $GLOBALS['tag_to_new'][$tag];
+	    	$bold_start = $should_bold ? "<b>" : "";
+	    	$bold_end = $should_bold ? "</b>" : "";
+		    echo "<img src=\"/images/icons/tag.png\"> $bold_start<a href=\"/db/$tag\">" . strtolower(tag_name_sub($tag)) . "</a>$bold_end ($count)<br/>\n";
 		}
 	}
 
