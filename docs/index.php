@@ -206,7 +206,7 @@
  		if(!$essays)
  			return;
  		
- 		natsort($essays);
+ 		usort($essays,"essay_sort");
 
  		$tag_name = $tag;
  		if($GLOBALS['tag_to_name'][$tag])
@@ -309,7 +309,7 @@ EOT;
 
 		echo "<div class=\"note-tags\">";
 	    foreach ($tags as $tag) {
-	    	if (special_tag($tag) && $GLOBALS['local_access'] || !special_tag($tag))
+	    	if (special_tag($tag) && $GLOBALS['local_access'] || !special_tag($tag) || $tag == "_new")
 		    	echo "<img src=\"/images/icons/tag.png\"> <a href='/db/$tag'>" . $tag . "</a>\n";
 		}
 		echo "</div>";
@@ -325,6 +325,17 @@ EOT;
 
 	function tag_count_sort($a,$b) {
 		return count($GLOBALS['tag_to_essays'][$b]) - count($GLOBALS['tag_to_essays'][$a]);
+	}
+
+	function essay_sort($a,$b) {
+		$a_tags = $GLOBALS['essay_to_tags'][$a];
+		$b_tags = $GLOBALS['essay_to_tags'][$b];
+
+		if (in_array("_new",$a_tags) && !in_array("_new",$b_tags))
+			return -1;
+		if (!in_array("_new",$a_tags) && in_array("_new",$b_tags))
+			return 1;
+		return strnatcasecmp($a, $b);
 	}
 
 	function get_tags($line) {
