@@ -22,6 +22,7 @@
 	$GLOBALS['essays'] = array();
 
 	$GLOBALS['tag_to_essays'] = array();
+	$GLOBALS['tag_to_new'] = array();
 	$GLOBALS['essay_to_tags'] = array();
 
 	$GLOBALS['tag_to_title'] = array();
@@ -29,6 +30,8 @@
 	# $GLOBALS['index'] = json_decode(file_get_contents("./content/index.json"));
 
 	$GLOBALS['tag_to_name'] = array();
+
+	$GLOBALS['new_icon'] = '<img src="/images/icons/new.gif" />';
 
 	process_notes();
 	process_logs();
@@ -45,7 +48,8 @@
 	function print_nav_tags($tags) {
 	    foreach ($tags as $tag) {
 	    	$count = count($GLOBALS['tag_to_essays'][$tag]);
-		    echo "<img src=\"/images/icons/tag.png\"> <a href=\"/db/$tag\">" . strtolower(tag_name_sub($tag)) . "</a> ($count)<br/>\n";
+	    	$newtag = $GLOBALS['tag_to_new'][$tag] ? $GLOBALS['new_icon'] : "";
+		    echo "<img src=\"/images/icons/tag.png\"> <a href=\"/db/$tag\">" . strtolower(tag_name_sub($tag)) . "</a> ($count) $newtag<br/>\n";
 		}
 	}
 
@@ -85,9 +89,12 @@
 	    echo "</div>";
 	}
 
-	function hash_tags_and_title($tags,$title) {
+	function process_hash_tags_and_title($tags,$title) {
 		if (in_array("_pi",$tags) && !$GLOBALS['local_access'])
 			return;
+		$has_new = false;
+		if (in_array("_new",$tags))
+			$has_new = true;
 
 		foreach ($tags as $tag) {
 
@@ -95,6 +102,9 @@
     			$GLOBALS['tag_to_essays'][$tag] = array();
     		}
     		array_push($GLOBALS['tag_to_essays'][$tag],$title);
+
+    		if ($has_new)
+    			$GLOBALS['tag_to_new'][$tag] = true;
 
     		if (!$GLOBALS['essay_to_tags'][$title]) {
     			$GLOBALS['essay_to_tags'][$title] = array();
@@ -123,7 +133,7 @@
 							$GLOBALS['essays'][$title] = $contents;
 
 							if ($tags = get_tags($note))
-								hash_tags_and_title($tags,$title);
+								process_hash_tags_and_title($tags,$title);
 				        }
         			}        			        			
 				}
@@ -172,7 +182,7 @@
 							$GLOBALS['essays'][$title] = $body;
 
 							if ($tags)
-								hash_tags_and_title($tags,$title);
+								process_hash_tags_and_title($tags,$title);
 							
 		        		}
 		        	}
