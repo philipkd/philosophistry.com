@@ -51,7 +51,7 @@
 	    	$should_bold = $GLOBALS['tag_to_new'][$tag] && $tag != "_new";
 	    	$bold_start = $should_bold ? "<b>" : "";
 	    	$bold_end = $should_bold ? "</b>" : "";
-		    echo "$bold_start<a href=\"/db/$tag\">" . strtolower(tag_name_sub($tag)) . "</a>$bold_end ($count)<br/>\n";
+		    echo "$bold_start<a href=\"/db/$tag\">" . strtolower(tag_name_sub($tag)) . "</a>$bold_end <span class=\"count\">$count</span><br/>\n";
 		}
 	}
 
@@ -59,11 +59,11 @@
 
 		echo "<div id=\"db\">";
 	    
-		echo "<b>Database</b> (";
+		echo "<b>Database</b> <span class=\"count\">";
 
 	    echo count($GLOBALS['essays']);
 
-		echo ")<p/>";
+		echo "</span><p/>";
 
 	    $tags = array_keys($GLOBALS['tag_to_essays']);
 	    usort($tags, "tag_count_sort");
@@ -274,7 +274,7 @@ EOT;
 
 	function print_wiki() {
 		$count = wiki_count();
-		echo "<b>Wiki</b> ($count)";
+		echo "<b>Wiki</b>  <span class=\"count\">$count</span>";
 		echo wiki_markdown(file_get_contents($GLOBALS['content_dir'] . "/Wiki/index.txt"));
 	}
 
