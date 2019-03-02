@@ -51,21 +51,19 @@
 	    	$should_bold = $GLOBALS['tag_to_new'][$tag];
 	    	$bold_start = $should_bold ? "<b>" : "";
 	    	$bold_end = $should_bold ? "</b>" : "";
-		    echo "<img src=\"/images/icons/tag.png\"> $bold_start<a href=\"/db/$tag\">" . strtolower(tag_name_sub($tag)) . "</a>$bold_end ($count)<br/>\n";
+		    echo "$bold_start<a href=\"/db/$tag\">" . strtolower(tag_name_sub($tag)) . "</a>$bold_end ($count)<br/>\n";
 		}
 	}
 
 	function print_nav() {
 
-		echo "<div id=\"nav\">";
+		echo "<div id=\"db\">";
 	    
-		echo "<b><a href=\"/\">Philosophistry</b></a><br/><br/>";
-
-		echo "<a href='/'>";
+		echo "<b>Database</b> (";
 
 	    echo count($GLOBALS['essays']);
 
-	    echo " Entries</a><br/> by <a href='http://philipkd.com/'>Philip Dhingra</a><br/>\n";
+		echo ")<p/>";
 
 	    $tags = array_keys($GLOBALS['tag_to_essays']);
 	    usort($tags, "tag_count_sort");
@@ -80,11 +78,10 @@
 	    		array_push($main_tags,$tag);
 	    }
 
-	    print "<br/>Tags<br/>";
-	    	print_nav_tags($main_tags);
+    	print_nav_tags($main_tags);
 
 		if ($GLOBALS['local_access']) {
-		    print "<br/>Special Tags<br/>";
+		    print "<p/>";
 		    print_nav_tags($special_tags);
 		}
 
@@ -242,7 +239,7 @@
 		
 		<h2></h2>
 
-<div class="note-body"><p>You can view <a href="https://medium.com/philosophistry">complete essays on Medium</a>, or you can browse the scratchpad on the site you are reading now.</p></div>
+<div class="note-body"><p>You can read my <a href="https://medium.com/philosophistry">complete essays on Medium</a>, or you can browse my scratchpad:</p></div>
 
 EOT;
 	}
@@ -376,7 +373,9 @@ EOT;
  			$tag_name = $GLOBALS['tag_to_name'][$tag];
 
 		$title = ucwords(tag_name_sub($tag));
+		$home = false;
 	} else {
+		$home = true;
 		$title = "Philosophistry";
 	}
 
@@ -392,16 +391,19 @@ EOT;
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <link rel="stylesheet" href="/wiki.css">
+<link rel="stylesheet" href="/home.css">
 
-<title><?= $title != "Philosophistry" ? "$title (Philosophistry)" : $title ?></title>
+
+<title><?= $title ?><? $home ? " (Philosophistry)" : "" ?></title>
 
 </head>
 
-<div class="site-title"><a href="/">Philosophistry</a> <a href="/">Database</a></div>
+
+<div class="site-title"><a href="/">Philosophistry<?= $home ? "</a> by <a href='https://philipkd.com/'>Philip Dhingra" : " Database" ?></a></div>
 
 <div class="entry">
 
-<div class="page-title"><?= $title ?></div>
+<?= $home ? "" : "<div class=\"page-title\">$title</div>" ?>
 
 <?php
 
@@ -409,22 +411,16 @@ EOT;
  		print_tag($GLOBALS['tag_route']);
  	} else {
 
-		print_nav();
-
  		print_about();
+
+		print_nav();
 
  		print_wiki();
 
-		// hr_tag();
-
-
- 	// 	print_medium_plug();
-
-		// hr_tag();
 
  	}
 
 ?>
 
-<br/>
+<br clear="all"/>
 <a href="https://licensebuttons.net/l/by/4.0/"><img src="https://licensebuttons.net/l/by/4.0/80x15.png"></a>
