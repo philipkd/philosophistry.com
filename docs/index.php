@@ -393,7 +393,6 @@ EOT;
 
 <?php
 
-	print_nav();
 
 	print "<div id='content'>";
 
@@ -401,9 +400,9 @@ EOT;
  		print_tag($GLOBALS['tag_route']);
  	} else {
 
- 		print_about();
+		print_nav();
 
-		print_tag("_new");
+ 		print_about();
 
  		print_wiki();
 
