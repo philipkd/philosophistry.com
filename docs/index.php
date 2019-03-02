@@ -239,7 +239,7 @@
 		
 		<h2></h2>
 
-<div class="note-body"><p>You can read my <a href="https://medium.com/philosophistry">complete essays on Medium</a>, or you can browse my scratchpad:</p></div>
+<div class="note-body"><p>You can read <a href="https://medium.com/philosophistry">complete essays on Medium</a>, or you can browse the scratchpad:</p></div>
 
 EOT;
 	}
