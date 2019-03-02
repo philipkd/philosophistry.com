@@ -423,4 +423,5 @@ EOT;
 ?>
 
 <br clear="all"/>
+<br/>
 <a href="https://licensebuttons.net/l/by/4.0/"><img src="https://licensebuttons.net/l/by/4.0/80x15.png"></a>
