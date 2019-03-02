@@ -273,20 +273,14 @@ EOT;
 	}
 
 	function print_wiki() {
-		echo "<h2>Wiki</h2>";
+		$count = wiki_count();
+		echo "<b>Wiki</b> ($count)";
 		echo wiki_markdown(file_get_contents($GLOBALS['content_dir'] . "/Wiki/index.txt"));
-
 	}
 
-	function print_book() {
-
-		echo <<<EOT
-<h2>Philosophistry, the Book</h2>
-<div class="note-body">
-<center><a href="https://www.amazon.com/gp/product/1530775183/?tag=philosophistr-20">Available now in paperback and on Kindle<!-- <br/><br/><img src="books/philosophistry/cover-thumb.png" alt="Philosophistry book cover" /> --></a></center>
-</div>
-EOT;
-
+	function wiki_count() {
+		$fi = new FilesystemIterator($GLOBALS['content_dir'] . "/Wiki", FilesystemIterator::SKIP_DOTS);
+		return iterator_count($fi);
 	}
 
 	function print_essay($title) {
