@@ -2,3 +2,7 @@
 	float: left;
 	width: 300px;
 }
+.note-tags {
+	margin: .25in 0 .5in;
+	font-size: 90%;
+}
