@@ -5,7 +5,7 @@
 
 	include_once "markdown.php";
 	
-	$GLOBALS['content_dir'] = dirname(__FILE__) . "/../content/live";
+	$GLOBALS['content_dir'] = dirname(__FILE__) . "/../content";
 
 	if (preg_match("/^local./", $_SERVER['HTTP_HOST']))
 		$GLOBALS['local_access'] = true;
