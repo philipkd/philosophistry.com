@@ -409,7 +409,7 @@ EOT;
 </head>
 
 
-<div class="site-title"><a href="/">Philosophistry<?= $home ? "</a> by <a href='https://philipkd.com/'>Philip Dhingra" : " Database" ?></a></div>
+<div class="site-title"><a href="/scratch">Philosophistry<?= $home ? "</a> by <a href='https://philipkd.com/'>Philip Dhingra" : " Database" ?></a></div>
 
 <div class="entry">
 
