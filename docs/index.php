@@ -226,7 +226,10 @@
 
 		// $i = 0;
  		foreach ($essays as $essay) {
-			print_essay($essay);
+			if ($GLOBALS['local_access'])
+				print_title_and_tags($essay);
+			else
+				print_essay($essay);
 
 			// if($i < count($essays) - 1)
 			//  	hr_tag();
@@ -281,6 +284,18 @@ EOT;
 	function wiki_count() {
 		$fi = new FilesystemIterator($GLOBALS['content_dir'] . "/Wiki", FilesystemIterator::SKIP_DOTS);
 		return iterator_count($fi);
+	}
+
+	function print_title_and_tags($title) {
+		echo "<p>" . ucfirst(titleify($title));
+		$tags = $GLOBALS['essay_to_tags'][$title];
+
+	    foreach ($tags as $tag) {
+	    	if (special_tag($tag) && $GLOBALS['local_access'] || !special_tag($tag) || $tag == "_new")
+		    	echo " <a href='/db/$tag'>" . $tag . "</a>\n";
+		}
+		echo "</p>";		
+
 	}
 
 	function print_essay($title) {
