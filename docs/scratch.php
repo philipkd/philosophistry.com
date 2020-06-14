@@ -287,7 +287,10 @@ EOT;
 	}
 
 	function print_title_and_tags($title) {
-		echo "<p>" . ucfirst(titleify($title));
+		echo "<p><b>" . ucfirst(titleify($title)) . "</b>";
+		if ($GLOBALS['essays'][$title])
+			echo " — " . substr($GLOBALS['essays'][$title],0,144);
+		echo "<br/>";
 		$tags = $GLOBALS['essay_to_tags'][$title];
 
 	    foreach ($tags as $tag) {
