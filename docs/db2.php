@@ -14,10 +14,19 @@ if ($filtered) {
 
 $files = array();
 
+$by_year = array();
+
 foreach (new RecursiveIteratorIterator($di) as $filename => $file) {
     if (strpos($file,'.txt')) {
-        if (strpos($file,'_stbd') === false && strpos($file,'_pi') === false) {
+        if (($filtered === true && preg_match('~/- ~',$file) === 0 && strpos($file,'_pi') === false) || $filtered === false) {
             array_push($files,$file);
+            if (preg_match('~/(\d+)/~',$file,$matches)) {
+                $year = $matches[1];
+                if (!array_key_exists($year,$by_year))
+                    $by_year[$year] = array();
+
+                array_push($by_year[$year],$file);
+            }
             $count++;
         }
         $total_count++;
@@ -25,13 +34,15 @@ foreach (new RecursiveIteratorIterator($di) as $filename => $file) {
     // echo $filename . ' - ' . $file->getSize() . ' bytes <br/>';
 }
 
+
+
 function fname_sort($a, $b) {
     $regex = '~.*/~';
     return strcasecmp(preg_replace($regex,'',$a),preg_replace($regex,'',$b));
 }
 
-foreach ($files as $file) {
-    $last_component = preg_replace('~/\d+/~','',$file);        
+function year_alpha_sort($a, $b) {
+    return strcasecmp($b,$a);
 }
 
 usort($files,'fname_sort');
@@ -45,6 +56,6 @@ foreach ($files as $file) {
 
 
 
-echo "$count" . ($filtered ? " of $total_count" : "") . " entries";
+echo "<br/> $count" . ($filtered ? " of $total_count" : "") . " entries";
 
 ?>
