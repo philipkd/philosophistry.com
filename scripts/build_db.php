@@ -2,14 +2,20 @@
 
 include_once('tools.php');
 
-$cmd = "php " . reldir() . "/../docs/scratch.php list";
+$cmd = "php " . reldir() . "/../docs/db.php list";
 $results = explode("\n",`$cmd`);
+$cmds = [];
 foreach ($results as $tag) {
 	if ($tag) {
-		$cmd = "php " . reldir() . "/../docs/scratch.php $tag > " . reldir() . "/../docs/db/$tag.html";
-		print "$cmd\n";
-		`$cmd`;
+		array_push($cmds,"php " . reldir() . "/../docs/db.php $tag > " . reldir() . "/../docs/db/$tag.html");
 	}
+}
+
+array_push($cmds,"php " . reldir() . "/../docs/db.php > " . reldir() . "/../docs/db/index.html");
+
+foreach ($cmds as $cmd) {
+	print "$cmd\n";
+	`$cmd`;
 }
 
 ?>
