@@ -8,7 +8,7 @@ RewriteEngine on
 
 RewriteRule ^scratch$ /scratch.php [L]
 
-RewriteRule ^db/([^.]*)$ /scratch.php?tag=$1 [L]
+RewriteRule ^db/([^.]*)$ /db.php?tag=$1 [L]
 
 RewriteRule ^wiki/([^.]*)$ /wiki.php?note=$1 [L]
 
